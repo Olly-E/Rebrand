@@ -1,8 +1,29 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ['latin'] })
+const generalSansBold = localFont({ src: [ {
+  path: '../../public/font/GeneralSansBold.otf',
+  weight: '700',
+  style: 'bold',
+},
+{
+  path: '../../public/font/GeneralSansLight.otf',
+  weight: '400',
+  style: 'normal',
+},
+{
+  path: '../../public/font/GeneralSansMedium.otf',
+  weight: '500',
+  style: 'medium',
+},
+{
+  path: '../../public/font/GeneralSansSemibold.otf',
+  weight: '600',
+  style: 'semibold',
+},
+]})
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={generalSansBold.className}>{children}</body>
     </html>
   )
 }
