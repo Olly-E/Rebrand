@@ -1,28 +1,21 @@
+import { Karla } from 'next/font/google'
 import type { Metadata } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
 
-const generalSansBold = localFont({ src: [ {
-  path: '../../public/font/GeneralSansBold.otf',
-  weight: '700',
-  style: 'bold',
-},
-{
-  path: '../../public/font/GeneralSansLight.otf',
-  weight: '400',
-  style: 'normal',
-},
-{
-  path: '../../public/font/GeneralSansMedium.otf',
-  weight: '500',
-  style: 'medium',
-},
-{
-  path: '../../public/font/GeneralSansSemibold.otf',
-  weight: '600',
-  style: 'semibold',
-},
-]})
+const recoleta = localFont({
+variable: '--font-recoleta',
+src: [
+  {
+    path: '../../public/font/Recoleta-Bold.ttf',
+    weight: '400',
+    style: 'normal',
+  },
+],
+
+})
+
+const karla = Karla({ subsets: ['latin'], variable: '--font-karla' })
 
 
 export const metadata: Metadata = {
@@ -37,7 +30,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={generalSansBold.className}>{children}</body>
+      <body 
+        className={`${karla.variable} ${recoleta.variable} antialiased`}
+      >{children}</body>
     </html>
   )
 }

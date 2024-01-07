@@ -1,18 +1,25 @@
-import { HeaderBar } from "../Components";
+'use client'
 import React from "react";
-import Footer from "../features/layouts/Footer";
 
 interface WebsiteLayoutProps {
   children: React.ReactNode;
 }
 
 const Layout: React.FC<WebsiteLayoutProps> = ({ children }) => {
+  React.useEffect( () => {
+    (
+      async () => {
+          const LocomotiveScroll = (await import('locomotive-scroll')).default
+          const locomotiveScroll = new LocomotiveScroll();
+          locomotiveScroll
+      }
+    )()
+
+  }, [])
   return (
     <div className="bg-black-state bg-noise-bg bg-contain">
-      <div className="overflow-y-auto h-screen scrollbar-hide">
-        <HeaderBar />
+      <div className="">
         {children}
-        <Footer />
       </div>
     </div>
   );
