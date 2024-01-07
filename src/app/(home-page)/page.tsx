@@ -13,7 +13,6 @@ import {
   ProjectSection,
 } from '../Components'
 import Footer from '../features/layouts/Footer'
-import { ArrowRight } from 'iconsax-react'
 
 const NAV_LINKS = [
   {
