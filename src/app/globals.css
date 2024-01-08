@@ -34,7 +34,7 @@ h5, h6{
 }
 
 
-p {
+p, ul, a {
   font-weight: 400;
   font-family: var(--font-karla);
 }
