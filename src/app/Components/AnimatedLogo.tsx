@@ -7,7 +7,7 @@ export const AnimatedLogo = () => {
   const blueCircleRef = React.useRef<HTMLDivElement>(null)
   const greenCircleRef = React.useRef<HTMLDivElement>(null)
   const yellowCircleRef = React.useRef<HTMLDivElement>(null)
-  const theBrandWordRef = React.useRef<HTMLImageElement>(null)
+  const theBrandWordRef = React.useRef<HTMLDivElement>(null)
 
   React.useLayoutEffect(() => {
     const tl = gsap.timeline()
@@ -38,11 +38,14 @@ export const AnimatedLogo = () => {
     const brandWordRef = gsap.to(theBrandWordRef.current, {
       y: 0,
       duration: 2,
-      delay: 4,
+   
     })
 
     tl.add(redBall, 0)
-    .add(blueBall, "-=2").add(greenBall, "-=2").add(yellowBall, "-=2").add(brandWordRef, 0.5)
+      .add(blueBall, '-=2')
+      .add(greenBall, '-=2')
+      .add(yellowBall, '-=2')
+      .add(brandWordRef, '-=3')
   }, [])
 
   return (
@@ -68,25 +71,21 @@ export const AnimatedLogo = () => {
       <div className=" w-full">
         <img src="/assets/home/b-letter.svg" alt="letter" />
       </div>
-      <div className=" w-full flex items-start justify-between">
+      <div className=" w-full flex items-stretch justify-between">
         <img
           src="/assets/home/r-letter.svg"
           alt="letter"
           className="max-w-[50%]"
         />
-        <div className="flex flex-col justify-between w-full items-center">
+        <div className="flex flex-col justify-between w-full min-h-full items-center">
           <div
             className="w-full aspect-square rounded-full bg-green-state translate-y-[-130px]"
             ref={greenCircleRef}
           />
-          {/* <div className="overflow-hidden h-[30px]">
-            <img
-              ref={theBrandWordRef}
-              src="/assets/home/the-brand.svg"
-              alt="letter"
-              className="w-[53px] h-[27px] translate-y-[60px]"
-            />
-          </div> */}
+
+          <p ref={theBrandWordRef} className="text-gray-50 translate-y-[130px] opacity-60 sm:ml-2 ml-[2px] md:leading-[14px] sm:leading-[14px] lg:leading-[18px] leading-[8px] lg:text-[16px] md:text-[12px] sm:text-[11px] text-[6px]">
+            THE <br /> BRAND
+          </p>
         </div>
       </div>
       <div className=" w-full flex items-start relative">
@@ -102,7 +101,9 @@ export const AnimatedLogo = () => {
       <div className=" w-full">
         <img src="/assets/home/a-letter.svg" alt="letter" />
       </div>
-      <p className="text-gray-50 opacity-60 lg:text-[16px] sm:text-[14px] text-[10px]">TM</p>
+      <p className="text-gray-50 opacity-60 sm:ml-2 ml-[2px] md:leading-[14px] sm:leading-[14px] lg:leading-[18px] leading-[8px] lg:text-[16px] md:text-[12px] sm:text-[11px] text-[6px]">
+        TM
+      </p>
     </div>
   )
 }
