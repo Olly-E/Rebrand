@@ -66,6 +66,11 @@ p {
     width: 100%;
   }
 }
+@media (max-width: 1440px) {
+  .container {
+    padding: 22px;
+  }
+}
 
 .perfect-circle {
   display: flex;
