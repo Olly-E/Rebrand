@@ -2,8 +2,6 @@
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { useLayoutEffect } from 'react'
-import Link from 'next/link'
-import clsx from 'clsx'
 import gsap from 'gsap'
 
 import {
@@ -16,7 +14,7 @@ import {
 import Footer from '../features/layouts/Footer'
 
 const Page = () => {
-  const designBrandingTextRef = React.useRef(null)
+  
 
   const bentDivRef1 = React.useRef(null)
   const bentDivRef2 = React.useRef(null)
@@ -31,7 +29,7 @@ const Page = () => {
     gsap.to(bentDivRef1.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -43,7 +41,7 @@ const Page = () => {
     gsap.to(bentDivRef2.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -55,7 +53,7 @@ const Page = () => {
     gsap.to(bentDivRef3.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -67,7 +65,7 @@ const Page = () => {
     gsap.to(bentDivRef4.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -79,7 +77,7 @@ const Page = () => {
     gsap.to(bentDivRef5.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -159,7 +157,7 @@ const Page = () => {
               WEBSITES, WE&apos;LL HELP YOU COMMUNICATE YOUR MESSAGE IN A WAY
               THAT RESONATES WITH YOUR CUSTOMERS.
             </h5>
-            <div className="w-full sm:w-auto mt-10">
+            <div className="w-full sm:w-auto ">
               <div className="flex items-center justify-between ">
                 <h2 className="text-head-100 sm:text-head-300 text-red-state leading-[70px]">
                   EXPLORE -
@@ -168,7 +166,7 @@ const Page = () => {
                   THE BRAND FOR YOUR BRAND💖
                 </p>
               </div>
-              <h2 className="text-head-100 sm:text-head-300 text-white-state leading-[40px]">
+              <h2 className="text-head-100 sm:text-head-300 text-white-state leading-[60px]">
                 & GET INSPIRED.
               </h2>
             </div>
@@ -176,16 +174,16 @@ const Page = () => {
         </div>
       </section>
       <section className="relative container">
-        <h5 className="sm:absolute relative sm:top-8 sm:left-10 sm:text-left text-center">
+        <h5 className="lg:absolute relative lg:top-8 lg:left-10 lg:text-left text-center">
           ABOUT
         </h5>
-        <h3 className="text-head-300 text-center" ref={designBrandingTextRef}>
+        <h3 className="text-head-300 text-center">
           OUR VALUES
         </h3>
-        <div className="mt-[140px] flex items-stretch justify-between gap-10">
+        <div className="mt-[140px] flex flex-col md:flex-row items-stretch justify-between gap-10">
           <OurValuesGrid />
           <div className="flex flex-col justify-between">
-            <div className="flex gap-[51px] text-white-state font-[300]">
+            <div className="flex lg:flex-row flex-col gap-[51px] text-white-state font-[300]">
               <p className="xl:w-[435px] text-justify leading-[189.675%]">
                 Rebrand — TheBrand ™ is a growing design agency, founded by
                 Israel Olurotimi, that specializes in helping brands and
@@ -203,12 +201,11 @@ const Page = () => {
                 reflects its identity and resonates with your target audience.
               </p>
             </div>
-            <div className="xl:hidden">
-              <div className="relative">
+            <div className="hidden relative xl:block">
+              <div className="">
                 <div className="flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute left-14 top-9 bg-yellow-state yellow-ball" />
                 <h2
                   className="text-white-state mt-[54px] text-head-250 font-[700] leading-[80px] w-[822px] relative z-10"
-                  ref={transformingDivRef}
                 >
                   — Transforming your insane
                 </h2>
@@ -221,27 +218,29 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="xl:hidden">
-              <div className="relative">
-                <div className="flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute left-14 top-9 bg-yellow-state yellow-ball" />
-                <h2
-                  className="text-white-state mt-[54px] text-head-250 font-[700] leading-[80px] w-[822px] relative z-10"
-                  ref={transformingDivRef}
-                >
-                  — Transforming your insane
-                </h2>
-              </div>
-              <div className="relative">
-                <div className="flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute right-10 -top-4 bg-green-state green-ball z-1" />
-                <h2 className="text-white-state text-head-250 font-[700] leading-[80px] w-[822px] relative z-10">
-                  ideas into a fulfilling reality.
-                </h2>
-              </div>
-            </div>
         </div>
+        <div className="xl:hidden relative hidden sm:block mx-auto text-center lg:w-[822px]">
+          <div className="">
+            <div className="hidden md:flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute left-14 -top-4 bg-yellow-state yellow-ball" />
+            <h2
+              className="text-white-state mt-[54px] text-[30px] sm:text-head-250 font-[700] sm:leading-[80px]  relative z-10"
+            >
+              — Transforming your insane
+            </h2>
+          </div>
+          <div className="relative">
+            <div className="hidden md:flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute right-10 -top-4 bg-green-state green-ball z-1" />
+            <h2 className="text-white-state text-[30px] sm:text-head-250 font-[700] sm:leading-[80px] relative z-10">
+              ideas into a fulfilling reality.
+            </h2>
+          </div>
+        </div>
+        <h2 className="text-white-state block sm:hidden text-[30px] font-[700] text-center mt-10 z-10">
+        — Transforming your insane ideas into a fulfilling reality.
+            </h2>
       </section>
       <section className="container flex items-center justify-center h-[843px]">
-        <div className="text-head-400 flex flex-col items-center">
+        <div className="text-head-400 flex flex-col items-center" ref={transformingDivRef}>
           <div className="flex">
             <h2
               className="py-[28px] px-[27px] leading-[80px] translate-y-[-28px] translate-x-[-190px] rotate-[-12.05deg] bg-green-state text-black-state"
