@@ -6,13 +6,10 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import gsap from 'gsap'
 
-import {
-  AnimatedLogo,
-  Button,
-  OurValuesGrid,
-  ProjectSection,
-} from '../Components'
+import { AnimatedLogo, Button, ProjectSection } from '../Components'
 import Footer from '../features/layouts/Footer'
+import { split } from '../animations/text'
+import OurValues from '../Components/OurValues'
 
 const NAV_LINKS = [
   {
@@ -43,8 +40,6 @@ const NAV_LINKS = [
 ]
 
 const Page = () => {
-  const designBrandingTextRef = React.useRef(null)
-
   const bentDivRef1 = React.useRef(null)
   const bentDivRef2 = React.useRef(null)
   const bentDivRef3 = React.useRef(null)
@@ -54,11 +49,12 @@ const Page = () => {
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
+    split()
 
     gsap.to(bentDivRef1.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top top',
         scrub: 1,
       },
       x: 0,
@@ -70,7 +66,7 @@ const Page = () => {
     gsap.to(bentDivRef2.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top top',
         scrub: 1,
       },
       x: 0,
@@ -82,7 +78,7 @@ const Page = () => {
     gsap.to(bentDivRef3.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top top',
         scrub: 1,
       },
       x: 0,
@@ -94,7 +90,7 @@ const Page = () => {
     gsap.to(bentDivRef4.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top top',
         scrub: 1,
       },
       x: 0,
@@ -106,7 +102,7 @@ const Page = () => {
     gsap.to(bentDivRef5.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top 10%',
+        start: 'top top',
         scrub: 1,
       },
       x: 0,
@@ -164,12 +160,12 @@ const Page = () => {
 
   return (
     <div className="text-gray-50 scrollbar-hide">
-      <section className="relative  mb-24">
+      <section className="relative h-screen mb-24">
         <div className="container">
           <div className="flex flex-col">
             <AnimatedLogo />
             <div className="flex items-start justify-between mt-10">
-              <h5 className="font-[300] text-[16px] text-gray-50 w-[296px] leading-[28px]">
+              <h5 className="font-[300] text-[16px] text-gray-50 w-[296px] leading-[28px]'">
                 LOGOS, BRANDING, UI/UX, CREATIVE WEB DESIGN, TEMPLATES
               </h5>
               <nav className="w-[295px] font-[300] flex justify-end items-center gap-x-8 gap-y-2 flex-wrap">
@@ -188,11 +184,14 @@ const Page = () => {
               </nav>
             </div>
           </div>
-          <Button className="w-[244px] h-[59.69px] mt-[168px] mx-auto">
+          <Button className="w-[244px] h-[59.69px] mt-[10%] mx-auto">
             LET&apos;S CONNECT
           </Button>
-          <div className="mt-[190px] flex items-center justify-between">
-            <h5 className="text-[16px] font-[700] w-[569px] leading-[30px]">
+          <div className="mt-[10%] flex items-center justify-between">
+            <h5
+              className="text-[16px] font-[700] w-[569px] leading-[30px]"
+              data-animation="paragraph"
+            >
               WE BELIEVE THAT DESIGN SHOULD BE BOTH BEAUTIFUL AND FUNCTIONAL.
               OUR TEAM OF EXPERIENCED DESIGNERS CREATES VISUAL SOLUTIONS THAT
               CONNECT WITH YOUR AUDIENCE AND INSPIRE ACTION. FROM BRANDING TO
@@ -215,51 +214,11 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="relative container">
-        <h5 className="absolute top-8 left-10">ABOUT</h5>
-        <h3 className="text-head-300 text-center" ref={designBrandingTextRef}>
-          OUR VALUES
-        </h3>
-        <div className="mt-[140px] flex items-stretch justify-between">
-          <OurValuesGrid />
-          <div className="flex flex-col justify-between">
-            <div className="flex gap-[51px] text-white-state font-[300]">
-              <p className="w-[435px] text-justify leading-[189.675%]">
-                Rebrand — TheBrand ™ is a growing design agency, founded by
-                Israel Olurotimi, that specializes in helping brands and
-                companies redefine their visual identity and online presence. We
-                help brands create memorable and unique brand image, reflecting
-                your brand’s story and helping you distinguish your identity
-                from other brands in the market, building a strong emotional
-                connection with your customers.
-              </p>
-              <p className="w-[314px] text-justify leading-[189.675%]">
-                We understand that a brand is more than just a logo or a
-                website. It&apos;s the sum of the values, the story, and the
-                unique selling proposition. That&apos;s why we take a holistic
-                approach to branding, ensuring that every aspect of your brand
-                reflects its identity and resonates with your target audience.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute left-14 top-9 bg-yellow-state yellow-ball" />
-              <h2
-                className="text-white-state mt-[54px] text-head-250 font-[700] leading-[80px] w-[822px] relative z-10"
-                ref={transformingDivRef}
-              >
-                — Transforming your insane
-              </h2>
-            </div>
-            <div className="relative">
-              <div className="flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute right-10 -top-4 bg-green-state green-ball z-1" />
-              <h2 className="text-white-state text-head-250 font-[700] leading-[80px] w-[822px] relative z-10">
-                ideas into a fulfilling reality.
-              </h2>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="container flex items-center justify-center h-[843px]">
+      <OurValues />
+      <section
+        className="container flex items-center justify-center h-[843px]"
+        ref={transformingDivRef}
+      >
         <div className="text-head-400 flex flex-col items-center">
           <div className="flex">
             <h2
@@ -303,19 +262,13 @@ const Page = () => {
         </div>
       </section>
       <section className="container">
-        <div className="flex items-center justify-between mt-10` mb-24">
+        <div className="mt-10 mb-24">
           <div>
-            <p>WHAT WE DO</p>
-            <h3 className="text-head-300">WHAT WE OFFER</h3>
+            <p data-animation="paragraph">WHAT WE DO</p>
+            <h3 className="text-head-300" data-animation="header">
+              SERVICES WE OFFER
+            </h3>
           </div>
-          <p className="w-[420px] font-[300] leading-[189.675%] text-justify">
-            We understand that a brand is more than just a logo or a website.
-            It&apos;s the sum of the values, the story, and the unique selling
-            proposition. That&apos;s why we take a holistic approach to
-            branding, ensuring that every aspect of your brand reflects its
-            identity and resonates with your target.
-          </p>
-          <Button>LET&apos;S CONNECT</Button>
         </div>
         <div className="grid grid-cols-4">
           <div className="h-[492px] bg-red-state px-[24px] pt-[29px] pb-[24px] overflow-hidden spring-container">
