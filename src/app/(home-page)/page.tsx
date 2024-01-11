@@ -2,42 +2,11 @@
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { useLayoutEffect } from 'react'
-import Link from 'next/link'
-import clsx from 'clsx'
 import gsap from 'gsap'
-
-import { AnimatedLogo, Button, ProjectSection } from '../Components'
+import { AnimatedLogo, Button, Navbar, ProjectSection } from '../Components'
 import Footer from '../features/layouts/Footer'
 import { split } from '../animations/text'
 import OurValues from '../Components/OurValues'
-
-const NAV_LINKS = [
-  {
-    id: 1,
-    title: 'OUR VALUES',
-    href: '#our-values',
-  },
-  {
-    id: 2,
-    title: 'SERVICES',
-    href: '#services',
-  },
-  {
-    id: 3,
-    title: 'TEMPLATES',
-    href: '#templates',
-  },
-  {
-    id: 4,
-    title: 'PROJECTS',
-    href: '#projects',
-  },
-  {
-    id: 5,
-    title: 'REACH-OUT',
-    href: '#reach-out',
-  },
-]
 
 const Page = () => {
   const bentDivRef1 = React.useRef(null)
@@ -54,7 +23,7 @@ const Page = () => {
     gsap.to(bentDivRef1.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top top',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -66,7 +35,7 @@ const Page = () => {
     gsap.to(bentDivRef2.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top top',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -78,7 +47,7 @@ const Page = () => {
     gsap.to(bentDivRef3.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top top',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -90,7 +59,7 @@ const Page = () => {
     gsap.to(bentDivRef4.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top top',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -102,7 +71,7 @@ const Page = () => {
     gsap.to(bentDivRef5.current, {
       scrollTrigger: {
         trigger: transformingDivRef.current,
-        start: 'top top',
+        start: 'top 40%',
         scrub: 1,
       },
       x: 0,
@@ -165,31 +134,18 @@ const Page = () => {
           <div className="flex flex-col">
             <AnimatedLogo />
             <div className="flex items-start justify-between mt-10">
-              <h5 className="font-[300] text-[16px] text-gray-50 w-[296px] leading-[28px]'">
+              <h5 className="font-[300] text-sm sm:text-[16px] text-gray-50 w-[296px] leading-[28px]">
                 LOGOS, BRANDING, UI/UX, CREATIVE WEB DESIGN, TEMPLATES
               </h5>
-              <nav className="w-[295px] font-[300] flex justify-end items-center gap-x-8 gap-y-2 flex-wrap">
-                <div></div>
-                {NAV_LINKS.map((link, index) => {
-                  return (
-                    <Link
-                      href={link.href}
-                      key={index}
-                      className={clsx('text-sm text-gray-50')}
-                    >
-                      {link.title}
-                    </Link>
-                  )
-                })}
-              </nav>
+              <Navbar />
             </div>
           </div>
           <Button className="w-[244px] h-[59.69px] mt-[10%] mx-auto">
             LET&apos;S CONNECT
           </Button>
-          <div className="mt-[10%] flex items-center justify-between">
+          <div className="mt-[10%] flex gap-10 flex-col lg:flex-row items-center justify-between">
             <h5
-              className="text-[16px] font-[700] w-[569px] leading-[30px]"
+              className="text-sm sm:text-[16px] font-[700] sm:w-[569px] leading-[30px] text-center lg:text-left"
               data-animation="paragraph"
             >
               WE BELIEVE THAT DESIGN SHOULD BE BOTH BEAUTIFUL AND FUNCTIONAL.
@@ -198,16 +154,16 @@ const Page = () => {
               WEBSITES, WE&apos;LL HELP YOU COMMUNICATE YOUR MESSAGE IN A WAY
               THAT RESONATES WITH YOUR CUSTOMERS.
             </h5>
-            <div>
-              <div className="flex items-center justify-between">
-                <h2 className="text-head-300 text-red-state leading-[70px]">
+            <div className="w-full sm:w-auto ">
+              <div className="flex items-center justify-between ">
+                <h2 className="text-head-100 sm:text-head-300 text-red-state leading-[70px]">
                   EXPLORE -
                 </h2>
-                <p className="text-sm w-[108px] mr-10 font-[300]">
+                <p className="text-sm w-[108px] sm:mr-10 font-[300]">
                   THE BRAND FOR YOUR BRAND💖
                 </p>
               </div>
-              <h2 className="text-head-300 text-white-state leading-[70px]">
+              <h2 className="text-head-100 sm:text-head-300 text-white-state leading-[60px]">
                 & GET INSPIRED.
               </h2>
             </div>
@@ -222,13 +178,13 @@ const Page = () => {
         <div className="text-head-400 flex flex-col items-center">
           <div className="flex">
             <h2
-              className="py-[28px] px-[27px] leading-[80px] translate-y-[-28px] translate-x-[-190px] rotate-[-12.05deg] bg-green-state text-black-state"
+              className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] translate-y-[-28px] translate-x-[-120px] xl:translate-x-[-190px] rotate-[-12.05deg] bg-green-state text-black-state"
               ref={bentDivRef1}
             >
               THE
             </h2>
             <h2
-              className="py-[28px] leading-[80px] px-[27px] rotate-[12.34deg] bg-yellow-state translate-y-[-19px] translate-x-[140px] text-white-state"
+              className="xl:py-[28px] py-[14px] leading-[50px] xl:leading-[80px] xl:px-[27px] px-[13px] rotate-[12.34deg] bg-yellow-state translate-y-[-19px] translate-x-[70px] xl:translate-x-[140px] text-white-state"
               ref={bentDivRef2}
             >
               BRAND
@@ -236,24 +192,24 @@ const Page = () => {
           </div>
           <div className="flex">
             <h2
-              className="py-[28px] leading-[80px] px-[27px] rotate-[12.79deg] translate-x-[-50px] bg-red-state text-white-state"
+              className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] rotate-[12.79deg] translate-x-[-50px] bg-red-state text-white-state"
               ref={bentDivRef3}
             >
               FOR
             </h2>
-            <h2 className="py-[28px] px-[27px] leading-[80px] bg-blue-state text-black-state ">
+            <h2 className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] bg-blue-state text-black-state ">
               YOUR
             </h2>
           </div>
           <div className="flex">
             <h2
-              className="py-[28px] px-[27px] leading-[80px] rotate-[-8.54deg] translate-x-[-50px] translate-y-[68px] translate bg-white-state text-black-state"
+              className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] rotate-[-8.54deg] translate-x-[-50px] translate-y-[68px] translate bg-white-state text-black-state"
               ref={bentDivRef4}
             >
               BRAND
             </h2>
             <h2
-              className="py-[28px] px-[27px] leading-[80px] translate-y-[90px] translate-x-[60px] rotate-[13.28deg] bg-black-state border border-white-state text-white-state"
+              className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] translate-y-[90px] translate-x-[10px] xl:translate-x-[60px] rotate-[13.28deg] bg-black-state border border-white-state text-white-state"
               ref={bentDivRef5}
             >
               !!!

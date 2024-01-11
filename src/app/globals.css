@@ -37,7 +37,8 @@ h6 {
   font-family: var(--font-karla);
 }
 
-p {
+
+p, ul, a {
   font-weight: 400;
   font-family: var(--font-karla);
 }
@@ -76,6 +77,11 @@ p {
     width: 100%;
   }
 }
+@media (max-width: 768px) {
+  .container {
+    padding: 22px;
+  }
+}
 
 .perfect-circle {
   display: flex;
@@ -100,9 +106,7 @@ p {
 .do-this {
   opacity: 1;
 }
-.box-red {
-  color: blue;
-}
+
 @keyframes to-and-fro {
   0% {
     transform: translateX(0);

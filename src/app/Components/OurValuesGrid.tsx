@@ -2,7 +2,7 @@ import React from 'react'
 
 export const OurValuesGrid = () => {
   return (
-    <div className="w-[454px]">
+    <div className="w-[454px] md:mx-0 mx-auto">
       <div className="flex gap-[10px]">
         <p className="text-head-200 text-black bg-red-state h-[64px] flex-1 flex items-center justify-center">
           RE-EVALUATE

@@ -34,6 +34,7 @@ const config: Config = {
         "head-250": "60px",
         "head-200": "48px",
         "head-100": "36px",
+        "head-70": "34px",
       },
       screens: {
         xs: "440px",
