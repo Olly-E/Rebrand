@@ -88,7 +88,7 @@ const OurValues = () => {
         </div>
         <div className="flex gap-[51px] text-white-state font-[300]">
           <p
-            className="w-[500px] text-justify text-[20px] uppercase leading-[189.675%] values-text"
+            className="w-[500px] text-justify text-[20px] uppercase leading-[189.675%] xl:w-[435px]  values-text"
             data-animation="paragraph"
           >
             Welcome to Rebrand — TheBrand ™ - Where brands find their rhythm,
