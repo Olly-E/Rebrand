@@ -240,16 +240,16 @@ const Page = () => {
             </h2>
       </section>
       <section className="container flex items-center justify-center h-[843px]">
-        <div className="text-head-400 flex flex-col items-center" ref={transformingDivRef}>
+        <div className="text-head-300 xl:text-head-400 flex flex-col items-center" ref={transformingDivRef}>
           <div className="flex">
             <h2
-              className="py-[28px] px-[27px] leading-[80px] translate-y-[-28px] translate-x-[-190px] rotate-[-12.05deg] bg-green-state text-black-state"
+              className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] translate-y-[-28px] translate-x-[-120px] xl:translate-x-[-190px] rotate-[-12.05deg] bg-green-state text-black-state"
               ref={bentDivRef1}
             >
               THE
             </h2>
             <h2
-              className="py-[28px] leading-[80px] px-[27px] rotate-[12.34deg] bg-yellow-state translate-y-[-19px] translate-x-[140px] text-white-state"
+              className="xl:py-[28px] py-[14px] leading-[50px] xl:leading-[80px] xl:px-[27px] px-[13px] rotate-[12.34deg] bg-yellow-state translate-y-[-19px] translate-x-[70px] xl:translate-x-[140px] text-white-state"
               ref={bentDivRef2}
             >
               BRAND
@@ -257,24 +257,24 @@ const Page = () => {
           </div>
           <div className="flex">
             <h2
-              className="py-[28px] leading-[80px] px-[27px] rotate-[12.79deg] translate-x-[-50px] bg-red-state text-white-state"
+              className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] rotate-[12.79deg] translate-x-[-50px] bg-red-state text-white-state"
               ref={bentDivRef3}
             >
               FOR
             </h2>
-            <h2 className="py-[28px] px-[27px] leading-[80px] bg-blue-state text-black-state ">
+            <h2 className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] bg-blue-state text-black-state ">
               YOUR
             </h2>
           </div>
           <div className="flex">
             <h2
-              className="py-[28px] px-[27px] leading-[80px] rotate-[-8.54deg] translate-x-[-50px] translate-y-[68px] translate bg-white-state text-black-state"
+              className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] rotate-[-8.54deg] translate-x-[-50px] translate-y-[68px] translate bg-white-state text-black-state"
               ref={bentDivRef4}
             >
               BRAND
             </h2>
             <h2
-              className="py-[28px] px-[27px] leading-[80px] translate-y-[90px] translate-x-[60px] rotate-[13.28deg] bg-black-state border border-white-state text-white-state"
+              className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] translate-y-[90px] translate-x-[10px] xl:translate-x-[60px] rotate-[13.28deg] bg-black-state border border-white-state text-white-state"
               ref={bentDivRef5}
             >
               !!!
