@@ -8,53 +8,57 @@ const Loader = () => {
 
   useEffect(() => {
     const assets = [
-      require('../../../public/assets/home/a-letter.svg'),
-      require('../../../public/assets/home/b-letter.svg'),
-      require('../../../public/assets/home/brand-logo.png'),
-      require('../../../public/assets/home/diagonal.svg'),
-      require('../../../public/assets/home/diagonal2.svg'),
-      require('../../../public/assets/home/e-letter.svg'),
-      require('../../../public/assets/home/n-letter.svg'),
-      require('../../../public/assets/home/pokadot.svg'),
-      require('../../../public/assets/home/pokadot2.svg'),
-      require('../../../public/assets/home/project1.png'),
-      require('../../../public/assets/home/project2.png'),
-      require('../../../public/assets/home/project3.png'),
-      require('../../../public/assets/home/project4.png'),
-      require('../../../public/assets/home/r-letter.svg'),
-      require('../../../public/assets/home/the-brand.svg'),
+      '/assets/home/a-letter.svg',
+      '/assets/home/b-letter.svg',
+      '/assets/home/brand-logo.png',
+      '/assets/home/diagonal.svg',
+      '/assets/home/diagonal2.svg',
+      '/assets/home/e-letter.svg',
+      '/assets/home/n-letter.svg',
+      '/assets/home/pokadot.svg',
+      '/assets/home/pokadot2.svg',
+      '/assets/home/project1.png',
+      '/assets/home/project2.png',
+      '/assets/home/project3.png',
+      '/assets/home/project4.png',
+      '/assets/home/r-letter.svg',
+      '/assets/home/the-brand.svg',
     ]
 
-    const totalAssets = assets.length
+    const totalAssets = assets.length - 1
     let loadedAssets = 0
 
     const checkAssetsLoaded = () => {
       loadedAssets += 1
       if (loadedAssets === totalAssets) {
-        setIsAssetsLoaded({ isAssetsLoaded: true })
+        setTimeout(() => {
+          setIsAssetsLoaded({ isAssetsLoaded: true })
+        }, 1000)
       }
     }
 
     const updateLoadingProgress = () => {
       const progress = (loadedAssets / totalAssets) * 100
       setLoadingProgress(progress)
+      console.log(loadedAssets, totalAssets)
     }
 
-    const loadAsset = (path: string) => {
-      const img = new Image()
-      img.onload = () => {
-        loadedAssets += 1
-        updateLoadingProgress()
-        checkAssetsLoaded()
-      }
-      img.onerror = (error) => {
-        console.error(`Error loading asset: ${path}`, error)
-        checkAssetsLoaded()
-      }
-      img.src = path
+    const loadAssets = () => {
+      assets.forEach((path) => {
+        const img = new Image()
+        img.onload = () => {
+          updateLoadingProgress()
+          checkAssetsLoaded()
+        }
+        img.onerror = (error) => {
+          console.error(`Error loading asset: ${path}`, error)
+          checkAssetsLoaded()
+        }
+        img.src = path
+      })
     }
 
-    assets.forEach((path) => loadAsset(path))
+    loadAssets()
   }, [setIsAssetsLoaded])
 
   return (
