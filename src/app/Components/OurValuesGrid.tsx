@@ -19,18 +19,18 @@ export const OurValuesGrid = () => {
             <path
               d="M6.39555 11.3932L6.05748 20.9783L15.6426 21.3164"
               stroke="#EFD05C"
-              stroke-width="3"
-              stroke-miterlimit="10"
-              stroke-linecap="square"
-              stroke-linejoin="round"
+              strokeWidth="3"
+              strokeMiterlimit="10"
+              strokeLinecap="square"
+              strokeLinejoin="round"
             />
             <path
               d="M20.9766 7.05566L7.21981 19.8751"
               stroke="#EFD05C"
-              stroke-width="3"
-              stroke-miterlimit="10"
-              stroke-linecap="square"
-              stroke-linejoin="round"
+              strokeWidth="3"
+              strokeMiterlimit="10"
+              strokeLinecap="square"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -56,18 +56,18 @@ export const OurValuesGrid = () => {
             <path
               d="M16.6064 19.2904L23.3966 12.5168L16.623 5.72656"
               stroke="#EC3C3C"
-              stroke-width="3"
-              stroke-miterlimit="10"
-              stroke-linecap="square"
-              stroke-linejoin="round"
+              strokeWidth="3"
+              strokeMiterlimit="10"
+              strokeLinecap="square"
+              strokeLinejoin="round"
             />
             <path
               d="M3.40234 12.457L22.2062 12.4802"
               stroke="#EC3C3C"
-              stroke-width="3"
-              stroke-miterlimit="10"
-              stroke-linecap="square"
-              stroke-linejoin="round"
+              strokeWidth="3"
+              strokeMiterlimit="10"
+              strokeLinecap="square"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -87,22 +87,22 @@ export const OurValuesGrid = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0_562_644)">
+            <g clipPath="url(#clip0_562_644)">
               <path
                 d="M13.1183 20.4359L6.32801 13.6623L13.1016 6.87207"
                 stroke="#FBF5ED"
-                stroke-width="3"
-                stroke-miterlimit="10"
-                stroke-linecap="square"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeMiterlimit="10"
+                strokeLinecap="square"
+                strokeLinejoin="round"
               />
               <path
                 d="M106.416 13.6807L8.37346 13.6807"
                 stroke="#FBF5ED"
-                stroke-width="3"
-                stroke-miterlimit="10"
-                stroke-linecap="square"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeMiterlimit="10"
+                strokeLinecap="square"
+                strokeLinejoin="round"
               />
             </g>
             <defs>
@@ -127,22 +127,22 @@ export const OurValuesGrid = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0_562_644)">
+            <g clipPath="url(#clip0_562_644)">
               <path
                 d="M13.1183 20.4359L6.32801 13.6623L13.1016 6.87207"
                 stroke="#FBF5ED"
-                stroke-width="3"
-                stroke-miterlimit="10"
-                stroke-linecap="square"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeMiterlimit="10"
+                strokeLinecap="square"
+                strokeLinejoin="round"
               />
               <path
                 d="M106.416 13.6807L8.37346 13.6807"
                 stroke="#FBF5ED"
-                stroke-width="3"
-                stroke-miterlimit="10"
-                stroke-linecap="square"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeMiterlimit="10"
+                strokeLinecap="square"
+                strokeLinejoin="round"
               />
             </g>
             <defs>
@@ -174,22 +174,22 @@ export const OurValuesGrid = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0_562_1151)">
+            <g clipPath="url(#clip0_562_1151)">
               <path
                 d="M12.3936 19.2904L5.6034 12.5168L12.377 5.72656"
                 stroke="#51BA81"
-                stroke-width="3"
-                stroke-miterlimit="10"
-                stroke-linecap="square"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeMiterlimit="10"
+                strokeLinecap="square"
+                strokeLinejoin="round"
               />
               <path
                 d="M26.5977 12.457L7.79381 12.4802"
                 stroke="#51BA81"
-                stroke-width="3"
-                stroke-miterlimit="10"
-                stroke-linecap="square"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeMiterlimit="10"
+                strokeLinecap="square"
+                strokeLinejoin="round"
               />
             </g>
             <defs>

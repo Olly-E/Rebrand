@@ -28,13 +28,11 @@ const OurValues = () => {
         {
           xPercent: 50,
           scale: 2,
-          rotate: 2,
         },
         {
           xPercent: 0,
           duration: 1,
           scale: 1,
-          rotate: 0,
         }
       )
 
