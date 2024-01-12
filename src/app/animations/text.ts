@@ -1,9 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Splitting from 'splitting'
 import { IO } from './observe'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+
 gsap.registerPlugin(ScrollTrigger)
+
+let Splitting: any
+
+if (typeof window !== 'undefined') {
+  // Only import these modules in the browser environment
+  Splitting = require('splitting')
+}
 
 export const split = () => {
   const p = document.querySelectorAll("[data-animation='paragraph']")
