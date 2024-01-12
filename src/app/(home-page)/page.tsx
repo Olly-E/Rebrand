@@ -3,19 +3,12 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { useLayoutEffect } from 'react'
 import gsap from 'gsap'
-
-import {
-  AnimatedLogo,
-  Button,
-  Navbar,
-  OurValuesGrid,
-  ProjectSection,
-} from '../Components'
+import { AnimatedLogo, Button, Navbar, ProjectSection } from '../Components'
 import Footer from '../features/layouts/Footer'
+import { split } from '../animations/text'
+import OurValues from '../Components/OurValues'
 
 const Page = () => {
-  
-
   const bentDivRef1 = React.useRef(null)
   const bentDivRef2 = React.useRef(null)
   const bentDivRef3 = React.useRef(null)
@@ -25,6 +18,7 @@ const Page = () => {
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
+    split()
 
     gsap.to(bentDivRef1.current, {
       scrollTrigger: {
@@ -135,7 +129,7 @@ const Page = () => {
 
   return (
     <div className="text-gray-50 scrollbar-hide">
-      <section className="relative mb-24">
+      <section className="relative h-screen mb-24">
         <div className="container">
           <div className="flex flex-col">
             <AnimatedLogo />
@@ -146,11 +140,14 @@ const Page = () => {
               <Navbar />
             </div>
           </div>
-          <Button className="w-[244px] h-[59.69px] mt-[168px] mx-auto">
+          <Button className="w-[244px] h-[59.69px] mt-[10%] mx-auto">
             LET&apos;S CONNECT
           </Button>
-          <div className="mt-[190px] flex gap-10 flex-col lg:flex-row items-center justify-between">
-            <h5 className="text-sm sm:text-[16px] font-[700] sm:w-[569px] leading-[30px] text-center lg:text-left">
+          <div className="mt-[10%] flex gap-10 flex-col lg:flex-row items-center justify-between">
+            <h5
+              className="text-sm sm:text-[16px] font-[700] sm:w-[569px] leading-[30px] text-center lg:text-left"
+              data-animation="paragraph"
+            >
               WE BELIEVE THAT DESIGN SHOULD BE BOTH BEAUTIFUL AND FUNCTIONAL.
               OUR TEAM OF EXPERIENCED DESIGNERS CREATES VISUAL SOLUTIONS THAT
               CONNECT WITH YOUR AUDIENCE AND INSPIRE ACTION. FROM BRANDING TO
@@ -173,74 +170,12 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="relative container">
-        <h5 className="lg:absolute relative lg:top-8 lg:left-10 lg:text-left text-center">
-          ABOUT
-        </h5>
-        <h3 className="text-head-300 text-center">
-          OUR VALUES
-        </h3>
-        <div className="mt-[140px] flex flex-col md:flex-row items-stretch justify-between gap-10">
-          <OurValuesGrid />
-          <div className="flex flex-col justify-between">
-            <div className="flex lg:flex-row flex-col gap-[51px] text-white-state font-[300]">
-              <p className="xl:w-[435px] text-justify leading-[189.675%]">
-                Rebrand — TheBrand ™ is a growing design agency, founded by
-                Israel Olurotimi, that specializes in helping brands and
-                companies redefine their visual identity and online presence. We
-                help brands create memorable and unique brand image, reflecting
-                your brand’s story and helping you distinguish your identity
-                from other brands in the market, building a strong emotional
-                connection with your customers.
-              </p>
-              <p className="xl:w-[314px] text-justify leading-[189.675%]">
-                We understand that a brand is more than just a logo or a
-                website. It&apos;s the sum of the values, the story, and the
-                unique selling proposition. That&apos;s why we take a holistic
-                approach to branding, ensuring that every aspect of your brand
-                reflects its identity and resonates with your target audience.
-              </p>
-            </div>
-            <div className="hidden relative xl:block">
-              <div className="">
-                <div className="flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute left-14 top-9 bg-yellow-state yellow-ball" />
-                <h2
-                  className="text-white-state mt-[54px] text-head-250 font-[700] leading-[80px] w-[822px] relative z-10"
-                >
-                  — Transforming your insane
-                </h2>
-              </div>
-              <div className="relative">
-                <div className="flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute right-10 -top-4 bg-green-state green-ball z-1" />
-                <h2 className="text-white-state text-head-250 font-[700] leading-[80px] w-[822px] relative z-10">
-                  ideas into a fulfilling reality.
-                </h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="xl:hidden relative hidden sm:block mx-auto text-center lg:w-[822px]">
-          <div className="">
-            <div className="hidden md:flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute left-14 -top-4 bg-yellow-state yellow-ball" />
-            <h2
-              className="text-white-state mt-[54px] text-[30px] sm:text-head-250 font-[700] sm:leading-[80px]  relative z-10"
-            >
-              — Transforming your insane
-            </h2>
-          </div>
-          <div className="relative">
-            <div className="hidden md:flex items-center w-[29px] h-[29px] rounded-full leading-[0px] absolute right-10 -top-4 bg-green-state green-ball z-1" />
-            <h2 className="text-white-state text-[30px] sm:text-head-250 font-[700] sm:leading-[80px] relative z-10">
-              ideas into a fulfilling reality.
-            </h2>
-          </div>
-        </div>
-        <h2 className="text-white-state block sm:hidden text-[30px] font-[700] text-center mt-10 z-10">
-        — Transforming your insane ideas into a fulfilling reality.
-            </h2>
-      </section>
-      <section className="container flex items-center justify-center h-[843px]">
-        <div className="text-head-300 xl:text-head-400 flex flex-col items-center" ref={transformingDivRef}>
+      <OurValues />
+      <section
+        className="container flex items-center justify-center h-[843px]"
+        ref={transformingDivRef}
+      >
+        <div className="text-head-400 flex flex-col items-center">
           <div className="flex">
             <h2
               className="xl:py-[28px] py-[14px] xl:px-[27px] px-[13px] leading-[50px] xl:leading-[80px] translate-y-[-28px] translate-x-[-120px] xl:translate-x-[-190px] rotate-[-12.05deg] bg-green-state text-black-state"
@@ -283,19 +218,13 @@ const Page = () => {
         </div>
       </section>
       <section className="container">
-        <div className="flex items-center justify-between mt-10` mb-24">
+        <div className="mt-10 mb-24">
           <div>
-            <p>WHAT WE DO</p>
-            <h3 className="text-head-300">WHAT WE OFFER</h3>
+            <p data-animation="paragraph">WHAT WE DO</p>
+            <h3 className="text-head-300" data-animation="header">
+              SERVICES WE OFFER
+            </h3>
           </div>
-          <p className="w-[420px] font-[300] leading-[189.675%] text-justify">
-            We understand that a brand is more than just a logo or a website.
-            It&apos;s the sum of the values, the story, and the unique selling
-            proposition. That&apos;s why we take a holistic approach to
-            branding, ensuring that every aspect of your brand reflects its
-            identity and resonates with your target.
-          </p>
-          <Button>LET&apos;S CONNECT</Button>
         </div>
         <div className="grid grid-cols-4">
           <div className="h-[492px] bg-red-state px-[24px] pt-[29px] pb-[24px] overflow-hidden spring-container">

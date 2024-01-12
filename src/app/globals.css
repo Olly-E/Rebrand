@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  color: #FBF5ED;
+* {
+  color: #fbf5ed;
+  cursor: none;
 }
 
 ::-webkit-scrollbar {
@@ -11,7 +12,7 @@
   height: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #FF3B2D;
+  background-color: #ff3b2d;
   border-radius: 40px;
 }
 ::-webkit-scrollbar-track {
@@ -22,13 +23,16 @@
   display: none;
 }
 
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 700;
   font-family: var(--font-recoleta);
 }
 
-h5, h6{ 
+h5,
+h6 {
   font-weight: 700;
   font-family: var(--font-karla);
 }
@@ -39,15 +43,22 @@ p, ul, a {
   font-family: var(--font-karla);
 }
 
-
-
-
 @keyframes square {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(100px, 0); }
-  50% { transform: translate(100px, 100px); }
-  75% { transform: translate(0, 100px); }
-  100% { transform: translate(0, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(100px, 0);
+  }
+  50% {
+    transform: translate(100px, 100px);
+  }
+  75% {
+    transform: translate(0, 100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .big-bg-noise {
@@ -165,7 +176,7 @@ p, ul, a {
   transition: all 0.6s ease-in-out;
 }
 .poka-bg {
-  background-color: #FBF5ED;
+  background-color: #fbf5ed;
   transition: all 0.6s ease-in-out;
 }
 
@@ -209,12 +220,12 @@ p, ul, a {
     cubic-bezier(0.275, 0.285, 0.32, 1.375) forwards;
 }
 .spring-container:hover .spring {
-  animation: springAnimation 0.6s
-    cubic-bezier(0.275, 0.285, 0.32, 1.375) forwards;
+  animation: springAnimation 0.6s cubic-bezier(0.275, 0.285, 0.32, 1.375)
+    forwards;
 }
 .spring-container:not(:hover) .spring {
-  animation: reverseSpringAnimation 0.6s
-    cubic-bezier(0.275, 0.285, 0.32, 1.375) forwards;
+  animation: reverseSpringAnimation 0.6s cubic-bezier(0.275, 0.285, 0.32, 1.375)
+    forwards;
 }
 
 @keyframes springAnimation {
@@ -265,4 +276,17 @@ p, ul, a {
   100% {
     transform: translateY(0px);
   }
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
 }

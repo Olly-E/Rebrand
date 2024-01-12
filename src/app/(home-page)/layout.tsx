@@ -1,28 +1,32 @@
 'use client'
-import React from "react";
+import React from 'react'
+import Cursor from '../Components/Elements/Cursor'
+import { useAtom } from 'jotai'
+import { AssetsLoadedAtom } from '../store'
+import Loader from '../Components/Loader'
 
 interface WebsiteLayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Layout: React.FC<WebsiteLayoutProps> = ({ children }) => {
-  React.useEffect( () => {
-    (
-      async () => {
-          const LocomotiveScroll = (await import('locomotive-scroll')).default
-          const locomotiveScroll = new LocomotiveScroll();
-          locomotiveScroll
-      }
-    )()
+  const [isAssetsLoaded] = useAtom(AssetsLoadedAtom)
 
+  React.useEffect(() => {
+    ;(async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default
+      const locomotiveScroll = new LocomotiveScroll()
+      locomotiveScroll
+    })()
   }, [])
+
   return (
     <div className="bg-black-state bg-noise-bg bg-contain">
-      <div className="">
-        {children}
-      </div>
+      <Cursor />
+      {!isAssetsLoaded.isAssetsLoaded && <Loader />}
+      {isAssetsLoaded.isAssetsLoaded && <div className="">{children}</div>}
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
