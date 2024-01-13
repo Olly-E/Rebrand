@@ -21,7 +21,7 @@ const Layout: React.FC<WebsiteLayoutProps> = ({ children }) => {
   }, [])
 
   return (
-    <div className="bg-black-state bg-noise-bg bg-contain">
+    <div className="bg-black-state root-container">
       <Cursor />
       {!isAssetsLoaded.isAssetsLoaded && <Loader />}
       {isAssetsLoaded.isAssetsLoaded && <div className="">{children}</div>}

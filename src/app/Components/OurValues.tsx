@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import { OurValuesGrid } from './OurValuesGrid'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const OurValues = () => {
+export const OurValues = () => {
   const containerRef = useRef(null)
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const OurValues = () => {
       tl.fromTo(
         '.values-grid',
         {
-          xPercent: 50,
+          xPercent: 65,
           scale: 2,
         },
         {
@@ -100,5 +100,3 @@ const OurValues = () => {
     </section>
   )
 }
-
-export default OurValues

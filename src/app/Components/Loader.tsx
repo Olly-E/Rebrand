@@ -40,7 +40,6 @@ const Loader = () => {
     const updateLoadingProgress = () => {
       const progress = (loadedAssets / totalAssets) * 100
       setLoadingProgress(progress)
-      console.log(loadedAssets, totalAssets)
     }
 
     const loadAssets = () => {

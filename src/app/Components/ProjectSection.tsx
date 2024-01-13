@@ -26,7 +26,7 @@ export const ProjectSection = () => {
   ]
 
   return (
-    <div className="relative min-h-[1344px] h-full pt-[100px] w-full">
+    <section className="container relative min-h-[1344px] h-full pt-[100px] w-full">
       <div>
         <div className="h-full w-[1px] border-r border-opacity-20 border-r-white-state absolute top-0 left-[20%]" />
         <div className="h-full w-[1px] border-r border-opacity-20 border-r-white-state absolute top-0 left-[40%]" />
@@ -58,6 +58,6 @@ export const ProjectSection = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
