@@ -78,11 +78,12 @@ const Page = () => {
                 className="text-sm sm:text-[16px] font-[700] sm:w-[569px] leading-[30px] text-center lg:text-left"
                 data-animation="paragraph"
               >
-                WE BELIEVE THAT DESIGN SHOULD BE BOTH BEAUTIFUL AND FUNCTIONAL.
-                OUR TEAM OF EXPERIENCED DESIGNERS CREATES VISUAL SOLUTIONS THAT
-                CONNECT WITH YOUR AUDIENCE AND INSPIRE ACTION. FROM BRANDING TO
-                WEBSITES, WE&apos;LL HELP YOU COMMUNICATE YOUR MESSAGE IN A WAY
-                THAT RESONATES WITH YOUR CUSTOMERS.
+                WE BELIEVE THAT EVERY BRAND IS MORE THAN JUST A LOGO OR A
+                WEBSITE. OUR TEAM OF EXPERIENCED DESIGNERS AND DEVELOPERS
+                CREATE VISUAL SOLUTIONS THAT CONNECT WITH YOUR AUDIENCE AND
+                INSPIRE ACTION. FROM BRANDING TO WEBSITES, WE&apos;LL HELP YOU
+                COMMUNICATE YOUR MESSAGE IN A WAY THAT RESONATES WITH YOUR
+                CUSTOMERS.
               </h5>
             </div>
             <div className="w-full sm:w-auto ">
