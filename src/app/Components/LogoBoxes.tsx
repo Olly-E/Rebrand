@@ -39,6 +39,8 @@ export const LogoBoxes = () => {
           ease: 'elastic.out(0.2, 0.5)',
         }
       )
+
+      return () => tl.kill()
     }, containerRef)
 
     return () => ctx.revert()

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { AssetsLoadedAtom } from '../store'
-import { useAtom } from 'jotai'
+import { useSetAtom } from 'jotai'
 
 const Loader = () => {
   const [loadingProgress, setLoadingProgress] = useState(0)
-  const [, setIsAssetsLoaded] = useAtom(AssetsLoadedAtom)
+  const setIsAssetsLoaded = useSetAtom(AssetsLoadedAtom)
 
   useEffect(() => {
     const assets = [

@@ -26,7 +26,7 @@ export const OurValues = () => {
       tl.fromTo(
         '.values-grid',
         {
-          xPercent: 65,
+          xPercent: 70,
           scale: 2,
         },
         {

@@ -10,6 +10,7 @@ import {
   MarqueeSection,
   LogoBoxes,
   ServicesWeOffer,
+  Templates,
 } from '../Components'
 import Footer from '../features/layouts/Footer'
 import { split } from '../animations/text'
@@ -41,6 +42,8 @@ const Page = () => {
         ease: 'power1.inOut',
         delay: 2,
       })
+
+      return () => tl.kill()
     }, containerRef)
 
     return () => ctx.revert()
@@ -79,9 +82,9 @@ const Page = () => {
                 data-animation="paragraph"
               >
                 WE BELIEVE THAT EVERY BRAND IS MORE THAN JUST A LOGO OR A
-                WEBSITE. OUR TEAM OF EXPERIENCED DESIGNERS AND DEVELOPERS
-                CREATE VISUAL SOLUTIONS THAT CONNECT WITH YOUR AUDIENCE AND
-                INSPIRE ACTION. FROM BRANDING TO WEBSITES, WE&apos;LL HELP YOU
+                WEBSITE. OUR TEAM OF EXPERIENCED DESIGNERS AND DEVELOPERS CREATE
+                VISUAL SOLUTIONS THAT CONNECT WITH YOUR AUDIENCE AND INSPIRE
+                ACTION. FROM BRANDING TO WEBSITES, WE&apos;LL HELP YOU
                 COMMUNICATE YOUR MESSAGE IN A WAY THAT RESONATES WITH YOUR
                 CUSTOMERS.
               </h5>
@@ -112,18 +115,7 @@ const Page = () => {
       <LogoBoxes />
       <ServicesWeOffer />
       <ProjectSection />
-      <section className="container">
-        <h3 className="text-[230px] text-white-state leading-[180px]">
-          TEMPLATES
-        </h3>
-        <div>
-          <p className="w-[293px]">
-            We create and sell ready-made portfolio designs for designers,
-            developers and other tech enthusiasts
-          </p>
-          <Button className="mt-8">VIEW TEMPLATES</Button>
-        </div>
-      </section>
+      <Templates />
       <section className="container">
         <p className="text-center font-[300] opacity-50 mb-4">GET IN TOUCH</p>
         <h3 className="w-[611px] text-head-300 text-center mx-auto leading-[70px]">
