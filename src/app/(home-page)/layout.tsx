@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Cursor from '../Components/Elements/Cursor'
-import { useAtom } from 'jotai'
+import { useAtomValue } from 'jotai'
 import { AssetsLoadedAtom } from '../store'
 import Loader from '../Components/Loader'
 
@@ -10,7 +10,7 @@ interface WebsiteLayoutProps {
 }
 
 const Layout: React.FC<WebsiteLayoutProps> = ({ children }) => {
-  const [isAssetsLoaded] = useAtom(AssetsLoadedAtom)
+  const isAssetsLoaded = useAtomValue(AssetsLoadedAtom)
 
   React.useEffect(() => {
     ;(async () => {
