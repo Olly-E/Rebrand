@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Paradise Garden';
+  src: url('../../public/font/Paradise\ Garden.otf');
+}
+
 * {
   color: #fbf5ed;
   cursor: none;
@@ -289,7 +294,7 @@ a {
   z-index: 9999;
   transform-origin: 50% 50%;
   transform: translate(-50%, -50%);
-  mix-blend-mode:difference;
+  mix-blend-mode: difference;
 }
 
 .root-container {
