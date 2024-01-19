@@ -7,7 +7,6 @@ import {
   Navbar,
   ProjectSection,
   OurValues,
-  MarqueeSection,
   LogoBoxes,
   ServicesWeOffer,
   Templates,
@@ -111,9 +110,8 @@ const Page = () => {
         </div>
       </section>
       <OurValues />
-      <MarqueeSection />
       <LogoBoxes />
-      <ServicesWeOffer />
+      <ServicesWeOffer />x
       <ProjectSection />
       <Templates />
       <section className="container">

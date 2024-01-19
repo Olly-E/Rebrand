@@ -28,15 +28,15 @@ export const Templates = () => {
           section,
           {
             y: '100vh',
-            scale: 1.5,
+            scale: 1.3,
           },
-          { y: -index * 100, ease: 'none' },
+          { y: 0, ease: 'none' },
           0
         )
         sectionTimeline.to(section, {
-          scale: 1,
+          scale: 1 + 0.1 * index,
         })
-        masterTimeline.add(sectionTimeline, index * 0.7)
+        masterTimeline.add(sectionTimeline, index * 0.5)
       })
       return () => masterTimeline.kill()
     }, containerRef)
@@ -52,7 +52,7 @@ export const Templates = () => {
     {
       name: 'DETAIL DIVE',
       category: 'BRANDING/WEB DESIGN',
-      img: '/assets/home/project2.png',
+      img: '/assets/home/project3.png',
     },
     {
       name: 'FUTURE FORGE LABS',
@@ -90,8 +90,8 @@ export const Templates = () => {
               >
                 <img src={template.img} alt="project-img" width={'100%'} />
                 <div className="flex justify-between">
-                  <p className="text-sm w-[160px]">{template.name}</p>
-                  <p className="text-sm w-[160px] text-right">
+                  <p className="text-xs w-[160px]">{template.name}</p>
+                  <p className="text-xs w-[160px] text-right">
                     {template.category}
                   </p>
                 </div>
@@ -100,7 +100,7 @@ export const Templates = () => {
           })}
         </div>
       </div>
-      <div className="mt-[250px] mr-[5%] flex flex-col items-end">
+      <div className="mt-[250px] mr-[1%] flex flex-col items-end">
         <p className="w-[293px]">
           Consult our team to design and / or develop a custom-made portfolio
           for yourself or your brand.
