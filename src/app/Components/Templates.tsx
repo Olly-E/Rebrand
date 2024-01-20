@@ -10,6 +10,10 @@ export const Templates = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const sections = gsap.utils.toArray(
+        '.picture-container'
+      ) as HTMLDivElement[]
+
       const masterTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -19,25 +23,25 @@ export const Templates = () => {
           end: '+=5000',
         },
       })
-      const sections = gsap.utils.toArray(
-        '.picture-container'
-      ) as HTMLDivElement[]
+
       sections.forEach((section, index) => {
         const sectionTimeline = gsap.timeline()
         sectionTimeline.fromTo(
           section,
           {
             y: '100vh',
-            scale: 1.3,
+            scale: 1,
           },
           { y: 0, ease: 'none' },
           0
         )
         sectionTimeline.to(section, {
-          scale: 1 + 0.1 * index,
+          scale: 0.5 + 0.1 * index,
         })
-        masterTimeline.add(sectionTimeline, index * 0.5)
+
+        masterTimeline.add(sectionTimeline, index * 0.3)
       })
+
       return () => masterTimeline.kill()
     }, containerRef)
     return () => ctx.revert()
@@ -100,7 +104,7 @@ export const Templates = () => {
           })}
         </div>
       </div>
-      <div className="mt-[250px] mr-[1%] flex flex-col items-end">
+      <div className="mt-[250px] mr-[3%] flex flex-col items-end">
         <p className="w-[293px]">
           Consult our team to design and / or develop a custom-made portfolio
           for yourself or your brand.
