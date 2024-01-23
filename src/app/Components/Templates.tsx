@@ -94,8 +94,8 @@ export const Templates = () => {
               >
                 <img src={template.img} alt="project-img" width={'100%'} />
                 <div className="flex justify-between">
-                  <p className="text-xs w-[160px]">{template.name}</p>
-                  <p className="text-xs w-[160px] text-right">
+                  <p className="text-base w-[160px]">{template.name}</p>
+                  <p className="text-base w-[160px] text-right">
                     {template.category}
                   </p>
                 </div>
