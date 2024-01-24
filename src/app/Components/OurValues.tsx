@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { OurValuesGrid } from './OurValuesGrid'
 import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -8,73 +9,69 @@ gsap.registerPlugin(ScrollTrigger)
 export const OurValues = () => {
   const containerRef = useRef(null)
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        delay: 1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          fastScrollEnd: true,
-          start: 'top top',
-          toggleActions: 'play none none reverse',
-          preventOverlaps: true,
-          scrub: true,
-          pin: true,
-        },
-      })
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      delay: 1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        fastScrollEnd: true,
+        start: 'top top',
+        toggleActions: 'play none none reverse',
+        preventOverlaps: true,
+        scrub: true,
+        pin: true,
+      },
+    })
 
-      tl.fromTo(
-        '.values-grid',
-        {
-          xPercent: 70,
-          scale: 2,
-        },
-        {
-          xPercent: 0,
-          duration: 1,
-          scale: 1,
-        }
-      )
+    tl.fromTo(
+      '.values-grid',
+      {
+        xPercent: 70,
+        scale: 2,
+      },
+      {
+        xPercent: 0,
+        duration: 1,
+        scale: 1,
+      }
+    )
 
-      tl.fromTo(
-        '.header',
-        {
-          yPercent: 105,
-          opacity: 0,
-          rotateX: 50,
-          transformStyle: 'preserve-3d',
-        },
-        {
-          yPercent: 0,
-          opacity: 1,
-          rotateX: 0,
-          ease: 'easeOut',
-          duration: 0.25,
-          stagger: 3,
-        }
-      )
+    tl.fromTo(
+      '.header',
+      {
+        yPercent: 105,
+        opacity: 0,
+        rotateX: 50,
+        transformStyle: 'preserve-3d',
+      },
+      {
+        yPercent: 0,
+        opacity: 1,
+        rotateX: 0,
+        ease: 'easeOut',
+        duration: 0.25,
+        stagger: 3,
+      }
+    )
 
-      tl.fromTo(
-        '.values-text',
-        {
-          yPercent: 105,
-          opacity: 0,
-          rotateX: 50,
-          transformStyle: 'preserve-3d',
-        },
-        {
-          yPercent: 0,
-          opacity: 1,
-          rotateX: 0,
-          ease: 'easeOut',
-          duration: 0.4,
-          stagger: 2,
-        }
-      )
-    }, containerRef)
-
-    return () => ctx.revert()
-  }, [])
+    tl.fromTo(
+      '.values-text',
+      {
+        yPercent: 105,
+        opacity: 0,
+        rotateX: 50,
+        transformStyle: 'preserve-3d',
+      },
+      {
+        yPercent: 0,
+        opacity: 1,
+        rotateX: 0,
+        ease: 'easeOut',
+        duration: 0.4,
+        stagger: 2,
+      }
+    )
+  })
 
   return (
     <section className="relative container" ref={containerRef}>

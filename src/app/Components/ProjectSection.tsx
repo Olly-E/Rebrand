@@ -1,6 +1,7 @@
 import clsx from 'clsx'
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Button } from './Elements/Button'
 
@@ -10,8 +11,8 @@ export const ProjectSection = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef(null)
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
+  useGSAP(
+    () => {
       const tl = gsap.timeline({})
 
       const sections = gsap.utils.toArray('.horizontal-scroll-container')
@@ -29,10 +30,9 @@ export const ProjectSection = () => {
       })
 
       return () => tl.kill()
-    }, containerRef)
-
-    return () => ctx.revert()
-  }, [])
+    },
+    { scope: containerRef }
+  )
 
   const PROJECT_CONTENT_DATA = [
     {
@@ -110,7 +110,7 @@ export const ProjectSection = () => {
                     'horizontal-scroll-container w-[25vw] px-[35px]',
                     index % 2 !== 0 && 'translate-y-[50%]'
                   )}
-                  key={data.name}
+                  key={index}
                 >
                   <img src={data.img} alt="project-img" />
                   <div className="flex justify-between">
