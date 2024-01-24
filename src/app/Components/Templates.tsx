@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { Button } from './Elements/Button'
 import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -8,43 +9,40 @@ gsap.registerPlugin(ScrollTrigger)
 export const Templates = () => {
   const containerRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const sections = gsap.utils.toArray(
-        '.picture-container'
-      ) as HTMLDivElement[]
+  useGSAP(() => {
+    const sections = gsap.utils.toArray(
+      '.picture-container'
+    ) as HTMLDivElement[]
 
-      const masterTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          pin: true,
-          start: 'top top',
-          scrub: 1,
-          end: '+=5000',
+    const masterTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        pin: true,
+        start: 'top top',
+        scrub: 1,
+        end: '+=5000',
+      },
+    })
+
+    sections.forEach((section, index) => {
+      const sectionTimeline = gsap.timeline()
+      sectionTimeline.fromTo(
+        section,
+        {
+          y: '100vh',
+          scale: 1,
         },
+        { y: 0, ease: 'none' },
+        0
+      )
+      sectionTimeline.to(section, {
+        scale: index === sections.length - 1 ? 0.9 : 0.45 + 0.1 * index,
       })
 
-      sections.forEach((section, index) => {
-        const sectionTimeline = gsap.timeline()
-        sectionTimeline.fromTo(
-          section,
-          {
-            y: '100vh',
-            scale: 1,
-          },
-          { y: 0, ease: 'none' },
-          0
-        )
-        sectionTimeline.to(section, {
-          scale: 0.5 + 0.1 * index,
-        })
+      masterTimeline.add(sectionTimeline, index * 0.3)
+    })
 
-        masterTimeline.add(sectionTimeline, index * 0.3)
-      })
-
-      return () => masterTimeline.kill()
-    }, containerRef)
-    return () => ctx.revert()
+    return () => masterTimeline.kill()
   }, [])
 
   const TEMPLATE_CONTENT_DATA = [

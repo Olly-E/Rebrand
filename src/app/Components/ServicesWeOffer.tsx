@@ -1,45 +1,62 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 type ContainerProps = {
   className: string
   color?: '#EC3C3C' | '#030303' | '#EFD05C' | '#51BA81' | '#3C83EC'
   dotContainer?: boolean
+  springClassName: string
 }
 
 export const ServicesWeOffer = () => {
-  const onContainerHover = ({
-    className,
-    color,
-    dotContainer,
-  }: ContainerProps) => {
-    gsap.to(className, {
-      color: color,
-    })
+  const containerRef = useRef(null)
 
-    {
-      dotContainer &&
-        gsap.to('.dot-container', {
-          backgroundColor: '#EC3C3C',
-        })
+  const { contextSafe } = useGSAP({ scope: containerRef })
+
+  const onContainerHover = contextSafe(
+    ({ className, color, dotContainer, springClassName }: ContainerProps) => {
+      gsap.to(className, {
+        color: color,
+      })
+
+      {
+        dotContainer &&
+          gsap.to('.dot-container', {
+            backgroundColor: '#EC3C3C',
+          })
+      }
+
+      gsap.to(springClassName, {
+        marginTop: 0,
+        delay: 0.2,
+        ease: 'power1.out',
+      })
     }
-  }
+  )
 
-  const onContainerLeave = ({ className, dotContainer }: ContainerProps) => {
-    gsap.to(className, {
-      color: '#030303',
-    })
+  const onContainerLeave = contextSafe(
+    ({ className, dotContainer, springClassName }: ContainerProps) => {
+      gsap.to(className, {
+        color: '#030303',
+      })
 
-    {
-      dotContainer &&
-        gsap.to('.dot-container', {
-          backgroundColor: '#030303',
-        })
+      {
+        dotContainer &&
+          gsap.to('.dot-container', {
+            backgroundColor: '#030303',
+          })
+      }
+
+      gsap.to(springClassName, {
+        marginTop: '80%',
+        delay: 0.2,
+      })
     }
-  }
+  )
 
   return (
-    <section className="container">
+    <section className="container" ref={containerRef}>
       <div className="mt-10 mb-24">
         <div>
           <p data-animation="paragraph">WHAT WE DO</p>
@@ -56,12 +73,14 @@ export const ServicesWeOffer = () => {
               className: '.text-red',
               color: '#EC3C3C',
               dotContainer: true,
+              springClassName: '.red-spring',
             })
           }}
           onMouseLeave={() =>
             onContainerLeave({
               className: '.text-red',
               dotContainer: true,
+              springClassName: '.red-spring',
             })
           }
         >
@@ -69,7 +88,7 @@ export const ServicesWeOffer = () => {
             <div className="min-w-[17.5px] min-h-[17.5px] rounded-full bg-white-state absolute top-4 left-4 first-white-circle" />
             <div className="min-w-[17.5px] min-h-[17.5px] rounded-full bg-white-state right-4 bottom-4 absolute second-white-circle" />
           </div>
-          <div className="spring">
+          <div className="red-spring mt-[80%]">
             <p className="text-black-state font-bold mt-4 text-red">01.</p>
             <h3 className="text-head-100 mt-1 text-black-state leading-[120%] font-[700] text-red">
               Brand Logos and Posters
@@ -86,18 +105,23 @@ export const ServicesWeOffer = () => {
         <div
           className="h-[492px] bg-yellow-state hover:bg-black-state px-[24px] pt-[29px] pb-[24px] overflow-hidden spring-container"
           onMouseEnter={() => {
-            onContainerHover({ className: '.text-yellow', color: '#EFD05C' })
+            onContainerHover({
+              className: '.text-yellow',
+              color: '#EFD05C',
+              springClassName: '.yellow-spring',
+            })
           }}
           onMouseLeave={() =>
             onContainerLeave({
               className: '.text-yellow',
+              springClassName: '.yellow-spring',
             })
           }
         >
           <div className="relative w-[101px] h-[101px] bg-white white-container-circle flex items-center justify-center">
             <div className="bg-yellow-state yellow-circle" />
           </div>
-          <div className="spring">
+          <div className="yellow-spring mt-[80%]">
             <p className="text-black-state mt-4 font-bold text-yellow">02.</p>
             <h3 className="text-head-100 mt-1 text-black-state leading-[120%] font-[700] text-yellow">
               Brand Identity Package
@@ -114,11 +138,16 @@ export const ServicesWeOffer = () => {
         <div
           className="h-[492px] bg-green-state hover:bg-black-state px-[24px] pt-[29px] pb-[24px] overflow-hidden spring-container"
           onMouseEnter={() => {
-            onContainerHover({ className: '.text-green', color: '#51BA81' })
+            onContainerHover({
+              className: '.text-green',
+              color: '#51BA81',
+              springClassName: '.green-spring',
+            })
           }}
           onMouseLeave={() =>
             onContainerLeave({
               className: '.text-green',
+              springClassName: '.green-spring',
             })
           }
         >
@@ -130,7 +159,7 @@ export const ServicesWeOffer = () => {
               className="pokadot2 bg-green-state"
             />
           </div>
-          <div className="spring">
+          <div className="green-spring mt-[80%]">
             <p className="text-black-state font-bold mt-4 text-green">03.</p>
             <h3 className="text-head-100 mt-1 text-black-state leading-[120%] font-[700] text-green">
               UI/UX Design for Brand Website
@@ -146,11 +175,16 @@ export const ServicesWeOffer = () => {
         <div
           className="h-[492px] bg-blue-state hover:bg-black-state px-[24px] pt-[29px] pb-[24px] overflow-hidden spring-container"
           onMouseEnter={() => {
-            onContainerHover({ className: '.text-blue', color: '#3C83EC' })
+            onContainerHover({
+              className: '.text-blue',
+              color: '#3C83EC',
+              springClassName: '.blue-spring',
+            })
           }}
           onMouseLeave={() =>
             onContainerLeave({
               className: '.text-blue',
+              springClassName: '.blue-spring',
             })
           }
         >
@@ -162,7 +196,7 @@ export const ServicesWeOffer = () => {
               className="diagonal2 bg-blue-state"
             />
           </div>
-          <div className="spring">
+          <div className="blue-spring mt-[80%]">
             <p className="text-black-state font-bold mt-4 text-blue">04.</p>
             <h3 className="text-head-100 mt-1 text-black-state leading-[120%] font-[700] text-blue">
               Brand Website Development

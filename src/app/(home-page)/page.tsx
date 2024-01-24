@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import {
   AnimatedLogo,
   Button,
@@ -13,17 +13,18 @@ import {
 } from '../Components'
 import Footer from '../features/layouts/Footer'
 import { split } from '../animations/text'
+import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 
 const Page = () => {
   const containerRef = useRef(null)
 
-  useEffect(() => {
-    split()
+  useGSAP(
+    () => {
+      split()
 
-    const colors = ['#EC3C3C', '#EFD05C', '#51BA81', '#3C83EC']
+      const colors = ['#EC3C3C', '#EFD05C', '#51BA81', '#3C83EC']
 
-    const ctx = gsap.context(() => {
       const tl = gsap.timeline({ repeat: -1 })
 
       colors.forEach((color, index) => {
@@ -43,10 +44,9 @@ const Page = () => {
       })
 
       return () => tl.kill()
-    }, containerRef)
-
-    return () => ctx.revert()
-  }, [])
+    },
+    { scope: containerRef }
+  )
 
   return (
     <div className="text-gray-50 scrollbar-hide" ref={containerRef}>
