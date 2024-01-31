@@ -286,8 +286,8 @@ a {
 
 .custom-cursor {
   position: fixed;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-color: #fff;
   border-radius: 50%;
   pointer-events: none;
@@ -318,6 +318,19 @@ a {
 
 .clip-polygon {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+#wave {
+  fill: none;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #f4565b;
+}
+
+#svg {
+  width: 50px;
+  height: 50px;
 }
 
 @keyframes grain {
