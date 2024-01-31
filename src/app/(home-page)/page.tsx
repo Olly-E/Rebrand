@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
   AnimatedLogo,
   Button,
@@ -15,9 +15,28 @@ import Footer from '../features/layouts/Footer'
 import { split } from '../animations/text'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
+import { CustomEase } from 'gsap/CustomEase'
+import useSound from 'use-sound'
+import { Draggable } from 'gsap/all'
+
+gsap.registerPlugin(CustomEase)
+gsap.registerPlugin(Draggable)
 
 const Page = () => {
   const containerRef = useRef(null)
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const [play, { stop }] = useSound('/samba.mp3', { loop: true })
+
+  useEffect(() => {
+    if (isPlaying) {
+      play()
+    } else {
+      stop()
+    }
+  }, [isPlaying, play, stop])
 
   useGSAP(
     () => {
@@ -48,9 +67,24 @@ const Page = () => {
     { scope: containerRef }
   )
 
+  useEffect(() => {
+    Draggable.create(
+      [
+        '.green-circle',
+        '.blue-rectangle',
+        '.red-triangle',
+        '.white-semicircle',
+        '.yellow-oval',
+      ],
+      {
+        bounds: '.drag-container',
+      }
+    )
+  }, [])
+
   return (
     <div className="text-gray-50 scrollbar-hide" ref={containerRef}>
-      <section className="relative h-screen mb-24">
+      <section className="relative h-screen mb-24 drag-container">
         <div className="container">
           <div className="flex flex-col">
             <AnimatedLogo />
@@ -58,23 +92,39 @@ const Page = () => {
               <h5 className="font-[300] text-sm sm:text-[16px] text-gray-50 w-[296px] leading-[28px]">
                 LOGOS, BRANDING, UI/UX, CREATIVE WEB DESIGN, TEMPLATES
               </h5>
-              <Navbar />
+              <div className="flex gap-20">
+                <Navbar />
+              </div>
             </div>
           </div>
-          <Button className="w-[244px] h-[59.69px] mt-[10%] mx-auto">
-            LET&apos;S CONNECT
-          </Button>
+          <div className="flex-col mt-[5%]">
+            <div className="h-fit flex justify-center">
+              <img
+                src={'/assets/home/green-circle.svg'}
+                alt="green circle"
+                className="green-circle"
+              />
+              <img
+                src={'/assets/home/blue-rectangle.svg'}
+                alt="blue rectangle"
+                className="-mt-[30px] -ml-[5px] blue-rectangle"
+              />
+            </div>
+            <Button className="w-[244px] h-[59.69px] mx-auto">
+              LET&apos;S CONNECT
+            </Button>
+          </div>
           <div className="mt-[10%] flex gap-10 flex-col lg:flex-row items-center justify-between relative">
             <div className="relative">
               <img
                 src="/assets/home/yellow oval.svg"
                 alt="oval"
-                className="absolute -top-[100px]"
+                className="absolute -top-[100px] yellow-oval"
               />
               <img
                 src="/assets/home/red triangle.svg"
                 alt="oval"
-                className="absolute -right-[100px] bottom-0"
+                className="absolute -right-[100px] bottom-0 red-triangle"
               />
               <h5
                 className="text-sm sm:text-[16px] font-[700] sm:w-[569px] leading-[30px] text-center lg:text-left"
@@ -93,7 +143,7 @@ const Page = () => {
                 <img
                   src="/assets/home/white semicircle.svg"
                   alt="oval"
-                  className="absolute -top-[70px] right-[40px]"
+                  className="absolute -top-[70px] right-[40px] white-semicircle"
                 />
                 <h2 className="text-head-100 sm:text-head-300 text-red-state leading-[70px] explore-text">
                   EXPLORE -
@@ -111,7 +161,7 @@ const Page = () => {
       </section>
       <OurValues />
       <LogoBoxes />
-      <ServicesWeOffer />x
+      <ServicesWeOffer />
       <ProjectSection />
       <Templates />
       <section className="container">
