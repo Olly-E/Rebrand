@@ -304,12 +304,12 @@ a {
 }
 
 .root-container::after {
-  background: url('/assets/home/Light\ Noise.png');
+  background: url('/assets/home/Light_Noise.png');
   animation: grain 8s steps(10) infinite;
   content: '';
   height: 280%;
   left: -50%;
-  opacity: 0.3;
+  opacity: 0.4;
   position: fixed;
   top: -100%;
   width: 300%;
