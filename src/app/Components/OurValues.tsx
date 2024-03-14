@@ -76,14 +76,14 @@ export const OurValues = () => {
   return (
     <section className="relative container" ref={containerRef}>
       <h5 className="absolute top-8 left-10">ABOUT</h5>
-      <h3 className="text-head-300 text-center header">OUR VALUES</h3>
-      <div className="mt-[140px] mx-[10%] flex items-center justify-between">
+      <h3 className="text-head-200 sm:text-head-300 text-center header sm:mt-auto mt-[50px]">OUR VALUES</h3>
+      <div className="mt-[140px] sm:mx-[10%] gap-10 flex items-center justify-between lg:flex-row flex-col">
         <div className="values-grid">
           <OurValuesGrid />
         </div>
         <div className="flex gap-[51px] text-white-state font-[300]">
           <p
-            className="w-[500px] text-justify text-[20px] uppercase leading-[189.675%] xl:w-[435px]  values-text"
+            className="sm:w-[500px] text-justify sm:text-[20px] uppercase leading-[189.675%] xl:w-[435px]  values-text"
             data-animation="paragraph"
           >
             Welcome to Rebrand — TheBrand ™ - Where brands find their rhythm,

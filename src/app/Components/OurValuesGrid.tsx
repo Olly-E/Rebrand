@@ -463,12 +463,14 @@ export const OurValuesGrid = () => {
     return () => ctx.revert()
   }, [])
 
+
+
   return (
-    <div className="w-[454px] md:mx-0 mx-auto" ref={containerRef}>
+    <div className="md:w-[454px] md:mx-0 mx-auto" ref={containerRef}>
       <div className="flex gap-[10px]">
-        <h1 className="text-head-200 text-black bg-red-state h-[64px] flex-1 flex items-center justify-center reevaluate-bg">
+        <span className="text-head-100 lg:text-head-200 lg:font-recoleta text-black bg-red-state h-[64px] flex-1 flex items-center justify-center reevaluate-bg">
           RE-EVALUATE
-        </h1>
+        </span>
         <div className="border border-yellow-state flex justify-center items-center w-[64px] min-w-[64px] h-[64px] arrowdown-bg">
           {' '}
           <svg
@@ -500,12 +502,12 @@ export const OurValuesGrid = () => {
         </div>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
-        <h2 className="text-head-200 bg-black-state text-green-state border border-green-state h-[64px] flex-1 flex items-center justify-center enhance-bg">
+        <span className="text-head-100 lg:text-head-200 lg:px-0 px-4 lg:font-recoleta bg-black-state text-green-state border border-green-state h-[64px] flex-1 flex items-center justify-center enhance-bg">
           ENHANCE
-        </h2>
-        <h3 className="bg-black-state border border-blue-state text-blue-state text-head-200 flex justify-center items-center w-[172px] min-w-[64px] h-[64px] build-bg">
+        </span>
+        <span className="bg-black-state border border-blue-state text-blue-state text-head-100 lg:text-head-200 lg:font-recoleta flex justify-center items-center w-[172px] min-w-[64px] h-[64px] build-bg">
           BUILD
-        </h3>
+        </span>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
         <div className="border border-red-state bg-black flex justify-center items-center w-[64px] min-w-[64px] h-[64px] arrowright-bg">
@@ -537,15 +539,15 @@ export const OurValuesGrid = () => {
             />
           </svg>
         </div>
-        <h4 className="text-head-200 text-yellow-state bg-black border border-yellow-state h-[64px] flex-1 flex items-center justify-center represent-bg">
+        <span className="text-head-100 lg:text-head-200 lg:font-recoleta text-yellow-state bg-black border border-yellow-state h-[64px] flex-1 flex items-center justify-center represent-bg">
           REPRESENT
-        </h4>
+        </span>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
-        <h1 className="text-head-200 bg-black-state text-green-state border border-green-state h-[64px] flex-1 flex items-center justify-center advance-bg">
+        <span className="text-head-100 lg:text-head-200 lg:font-recoleta bg-black-state text-green-state border border-green-state h-[64px] flex-1 flex items-center justify-center advance-bg">
           ADVANCE
-        </h1>
-        <div className="border border-blue-state bg-blue-state text-blue-state text-head-200 flex justify-center items-center w-[145.7px] min-w-[64px] h-[64px] longArrowleft-bg">
+        </span>
+        <div className="border border-blue-state bg-blue-state text-blue-state text-head-100 lg:text-head-200 lg:font-recoleta flex justify-center items-center w-[145.7px] min-w-[64px] h-[64px] longArrowleft-bg">
           <svg
             width="105"
             height="28"
@@ -587,7 +589,7 @@ export const OurValuesGrid = () => {
         </div>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
-        <div className="bg-black-state border border-white-state text-head-200 flex justify-center items-center w-[145.7px] min-w-[64px] h-[64px] longArrowRight-bg">
+        <div className="bg-black-state border border-white-state text-head-100 lg:text-head-200 lg:font-recoleta flex justify-center items-center w-[145.7px] min-w-[64px] h-[64px] longArrowRight-bg">
           <svg
             width="105"
             height="28"
@@ -627,14 +629,14 @@ export const OurValuesGrid = () => {
             </defs>
           </svg>
         </div>
-        <h1 className="text-head-200 bg-black-state text-red-state border border-red-state h-[64px] flex-1 flex items-center justify-center nuture-bg">
+        <span className="text-head-100 lg:text-head-200 lg:font-recoleta bg-black-state text-red-state border border-red-state h-[64px] flex-1 flex items-center justify-center nuture-bg">
           NURTURE
-        </h1>
+        </span>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
-        <h1 className="text-[45px] text-black bg-yellow-state h-[64px] flex-1 flex items-center justify-center differentiate-bg">
+        <span className="text-head-100 lg:text-head-200 lg:font-recoleta text-black bg-yellow-state h-[64px] flex-1 flex items-center justify-center differentiate-bg">
           DIFFERENTIATE
-        </h1>
+        </span>
         <div className="border border-green-state flex justify-center items-center w-[64px] min-w-[64px] h-[64px] arrowleft-bg">
           {' '}
           <svg

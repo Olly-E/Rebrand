@@ -43,6 +43,7 @@ const config: Config = {
       },
       fontFamily: {
         paradiseGarden: ['Paradise Garden', 'sans-serif'],
+        recoleta: ['var(--font-recoleta)'],
       },
     },
   },
