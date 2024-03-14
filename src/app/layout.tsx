@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: 'Rebrand',
     description: 'The brand for your brand',
     images:
-      'https://drive.google.com/file/d/11RzFQr9CJUMq9u_yNROSj_FnIrXqOX4q/view?usp=sharing',
+      'https://drive.google.com/uc?export=download&id=11RzFQr9CJUMq9u_yNROSj_FnIrXqOX4q/view?usp=sharing',
     site: '@rebrandthebrand',
     card: 'summary_large_image',
   },
