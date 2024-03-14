@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: 'Rebrand',
   applicationName: 'Rebrand',
   description: 'The brand for your brand',
+  publisher: 'Rebrand',
   keywords: [
     'brand',
     'design',
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
     title: 'Rebrand',
     description: 'The brand for your brand',
     images:
-      'https://drive.google.com/file/d/11PY_7oJ9DO7xG-_oEwAWaQZxBdE1IPLQ/view?usp=sharing',
+      'https://pbs.twimg.com/profile_images/1739550368147570688/JvIRNUie_400x400.jpg',
   },
 }
 
