@@ -19,7 +19,8 @@ const karla = Karla({ subsets: ['latin'], variable: '--font-karla' })
 export const metadata: Metadata = {
   title: 'Rebrand',
   applicationName: 'Rebrand',
-  description: 'The brand for your brand',
+  description:
+    'Rebrand — TheBrand ™ is a growing design agency, that specializes in helping brands and companies redefine their visual identity and online presence.',
   publisher: 'Rebrand',
   keywords: [
     'brand',
@@ -53,16 +54,18 @@ export const metadata: Metadata = {
   ],
   twitter: {
     creator: '@rebrandthebrand',
-    title: 'Rebrand',
-    description: 'The brand for your brand',
+    title: 'Rebrand — TheBrand ™',
+    description:
+      'TRebrand — TheBrand ™ is a growing design agency, that specializes in helping brands and companies redefine their visual identity and online presence.',
     images:
-      'https://drive.google.com/file/d/11RzFQr9CJUMq9u_yNROSj_FnIrXqOX4q/view?usp=sharing',
+      'https://drive.google.com/uc?export=download&id=1LL9cVU_vABh2h65ezBIgSukaE1OSBkw_',
     site: '@rebrandthebrand',
     card: 'summary_large_image',
   },
   openGraph: {
-    title: 'Rebrand',
-    description: 'The brand for your brand',
+    title: 'Rebrand — TheBrand ™',
+    description:
+      'Rebrand — TheBrand ™ is a growing design agency, that specializes in helping brands and companies redefine their visual identity and online presence.',
     images:
       'https://pbs.twimg.com/profile_images/1739550368147570688/JvIRNUie_400x400.jpg',
   },
