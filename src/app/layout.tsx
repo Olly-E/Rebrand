@@ -18,6 +18,7 @@ const karla = Karla({ subsets: ['latin'], variable: '--font-karla' })
 
 export const metadata: Metadata = {
   title: 'Rebrand',
+  applicationName: 'Rebrand',
   description: 'The brand for your brand',
   keywords: [
     'brand',
@@ -50,16 +51,19 @@ export const metadata: Metadata = {
     'branding redesign',
   ],
   twitter: {
+    creator: '@rebrandthebrand',
     title: 'Rebrand',
     description: 'The brand for your brand',
-    images: '/assets/home/rebrandCard.png',
+    images:
+      'https://drive.google.com/file/d/11RzFQr9CJUMq9u_yNROSj_FnIrXqOX4q/view?usp=sharing',
     site: '@rebrandthebrand',
     card: 'summary_large_image',
   },
   openGraph: {
     title: 'Rebrand',
     description: 'The brand for your brand',
-    images: '/assets/home/rebrandIcon.png',
+    images:
+      'https://drive.google.com/file/d/11PY_7oJ9DO7xG-_oEwAWaQZxBdE1IPLQ/view?usp=sharing',
   },
 }
 
