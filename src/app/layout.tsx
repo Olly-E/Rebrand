@@ -52,7 +52,9 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Rebrand',
     description: 'The brand for your brand',
-    images: './favicon.ico',
+    images: '/assets/home/rebrandCard.png',
+    site: '@rebrand',
+    card: 'summary_large_image',
   },
   openGraph: {
     title: 'Rebrand',
