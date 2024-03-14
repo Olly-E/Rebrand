@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     title: 'Rebrand',
     description: 'The brand for your brand',
     images: '/assets/home/rebrandCard.png',
-    site: '@rebrand',
+    site: '@rebrandthebrand',
     card: 'summary_large_image',
   },
   openGraph: {
     title: 'Rebrand',
     description: 'The brand for your brand',
-    images: './favicon.ico',
+    images: '/assets/home/rebrandIcon.png',
   },
 }
 
