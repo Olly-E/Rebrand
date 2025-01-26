@@ -3,11 +3,12 @@ import type { Metadata } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
 
-const recoleta = localFont({
-  variable: '--font-recoleta',
+const resolve = localFont({
+  variable: '--font-resolve',
+  display: "swap",
   src: [
     {
-      path: '../../public/font/Recoleta-Bold.ttf',
+      path: '../../public/font/resolve-sans-bulk.otf',
       weight: '400',
       style: 'normal',
     },
@@ -77,8 +78,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${karla.variable} ${recoleta.variable} antialiased`}>
+    <html lang="en" className={`${resolve.variable} antialiased`}>
+      <body className={`${karla.variable} `}>
         {children}
       </body>
     </html>

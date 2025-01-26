@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Paradise Garden';
-  src: url('../../public/font/Paradise\ Garden.otf');
-}
 
 * {
   color: #fbf5ed;
@@ -33,7 +29,7 @@ h2,
 h3,
 h4 {
   font-weight: 700;
-  font-family: var(--font-recoleta);
+  font-family: var(--font-resolve);
 }
 
 h5,
@@ -147,22 +143,23 @@ a {
   transform: translateY(0px);
 }
 
-.yellow-circle {
-  border-radius: 100%;
-  transition: all 0.6s ease-in-out;
-  width: 75.28px;
-  height: 75.28px;
+.yellow-box {
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+  width: 57px;
+  height: 57px;
+  
 }
 
 .white-container-circle {
-  border-radius: 0%;
-  transition: all 0.6s ease-in-out;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
 }
 
 .pokadot {
   position: absolute;
   top: 0;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .pokadot2 {
   position: absolute;
@@ -170,17 +167,12 @@ a {
   opacity: 0;
   transition: all 0.6s ease-in-out;
 }
-.diagonal {
+.diagonal1 {
   position: absolute;
   top: 0;
   transition: all 0.6s ease-in-out;
 }
-.diagonal2 {
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  transition: all 0.6s ease-in-out;
-}
+
 .poka-bg {
   background-color: #fbf5ed;
   transition: all 0.6s ease-in-out;
@@ -192,12 +184,7 @@ a {
 .spring-container:hover .pokadot2 {
   opacity: 1;
 }
-.spring-container:hover .diagonal {
-  opacity: 0;
-}
-.spring-container:hover .diagonal2 {
-  opacity: 1;
-}
+
 .spring-container:hover .poka-bg {
   background-color: transparent;
 }
@@ -209,13 +196,15 @@ a {
   animation: reverseFirstWhiteCircleAnimation 0.6s
     cubic-bezier(0.275, 0.285, 0.32, 1.375) forwards;
 }
-.spring-container:hover .yellow-circle {
-  border-radius: 0%;
-  width: 43px;
-  height: 43px;
+.spring-container:hover .yellow-box {
+  border-radius: 100%;
+  width: 57px;
+  height: 57px;
+  background: black;
 }
 .spring-container:hover .white-container-circle {
   border-radius: 100%;
+  background-color: #efd05c;
 }
 .spring-container:hover .second-white-circle {
   animation: secondWhiteCircleAnimation 0.6s

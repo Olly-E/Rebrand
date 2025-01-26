@@ -129,7 +129,7 @@ export const MarqueeSection = () => {
           })
         }
       >
-        <h1 className={`text-[66px] font-paradiseGarden text-center red-state`}>
+        <h1 className={`text-[66px] font-resolve text-center red-state`}>
           WE BELIEVE THAT EVERY BRAND
         </h1>
       </div>
@@ -147,7 +147,7 @@ export const MarqueeSection = () => {
           })
         }
       >
-        <h2 className="text-[66px] font-paradiseGarden text-center whitespace-nowrap yellow-state">
+        <h2 className="text-[66px] font-resolve text-center whitespace-nowrap yellow-state">
           IS A SUPERHERO WITH UNIQUE POWERS
         </h2>
       </div>
@@ -165,7 +165,7 @@ export const MarqueeSection = () => {
           })
         }
       >
-        <h3 className="text-[66px] font-paradiseGarden text-center blue-state">
+        <h3 className="text-[66px] font-resolve text-center blue-state">
           AND WITH GREAT POWERS
         </h3>
       </div>
@@ -183,7 +183,7 @@ export const MarqueeSection = () => {
           })
         }
       >
-        <h4 className="text-[66px] font-paradiseGarden text-center green-state">
+        <h4 className="text-[66px] font-resolve text-center green-state">
           COMES EVEN BIGGER RESPONSIBILITIES
         </h4>
       </div>

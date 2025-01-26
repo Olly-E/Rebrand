@@ -463,15 +463,16 @@ export const OurValuesGrid = () => {
     return () => ctx.revert()
   }, [])
 
-
-
   return (
-    <div className="md:w-[454px] md:mx-0 mx-auto" ref={containerRef}>
+    <div
+      className="md:w-[504px] md:mx-0 mx-auto font-resolve"
+      ref={containerRef}
+    >
       <div className="flex gap-[10px]">
-        <span className="text-head-100 lg:text-head-200 lg:font-recoleta text-black bg-red-state h-[64px] flex-1 flex items-center justify-center reevaluate-bg">
+        <span className="text-head-100 lg:text-[33px] rounded-[5px] text-black bg-red-state h-[64px] flex-1 flex items-center justify-center reevaluate-bg">
           RE-EVALUATE
         </span>
-        <div className="border border-yellow-state flex justify-center items-center w-[64px] min-w-[64px] h-[64px] arrowdown-bg">
+        <div className="border border-yellow-state flex justify-center items-center w-[64px] min-w-[64px] h-[64px] rounded-[5px] arrowdown-bg">
           {' '}
           <svg
             width="28"
@@ -502,15 +503,15 @@ export const OurValuesGrid = () => {
         </div>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
-        <span className="text-head-100 lg:text-head-200 lg:px-0 px-4 lg:font-recoleta bg-black-state text-green-state border border-green-state h-[64px] flex-1 flex items-center justify-center enhance-bg">
+        <span className="text-head-100 lg:text-[33px] lg:px-0 px-4 rounded-[5px] bg-black-state text-green-state border border-green-state h-[64px] flex-1 flex items-center justify-center enhance-bg">
           ENHANCE
         </span>
-        <span className="bg-black-state border border-blue-state text-blue-state text-head-100 lg:text-head-200 lg:font-recoleta flex justify-center items-center w-[172px] min-w-[64px] h-[64px] build-bg">
+        <span className="bg-black-state border rounded-[5px] border-blue-state text-blue-state text-head-100 lg:text-[33px] flex justify-center items-center w-[172px] min-w-[64px] h-[64px] build-bg">
           BUILD
         </span>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
-        <div className="border border-red-state bg-black flex justify-center items-center w-[64px] min-w-[64px] h-[64px] arrowright-bg">
+        <div className="border border-red-state rounded-[5px] bg-black flex justify-center items-center w-[64px] min-w-[64px] h-[64px] arrowright-bg">
           {' '}
           <svg
             width="28"
@@ -539,15 +540,15 @@ export const OurValuesGrid = () => {
             />
           </svg>
         </div>
-        <span className="text-head-100 lg:text-head-200 lg:font-recoleta text-yellow-state bg-black border border-yellow-state h-[64px] flex-1 flex items-center justify-center represent-bg">
+        <span className="text-head-100 lg:text-[33px] rounded-[5px] text-yellow-state bg-black border border-yellow-state h-[64px] flex-1 flex items-center justify-center represent-bg">
           REPRESENT
         </span>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
-        <span className="text-head-100 lg:text-head-200 lg:font-recoleta bg-black-state text-green-state border border-green-state h-[64px] flex-1 flex items-center justify-center advance-bg">
+        <span className="text-head-100 lg:text-[33px] rounded-[5px] bg-black-state text-green-state border border-green-state h-[64px] flex-1 flex items-center justify-center advance-bg">
           ADVANCE
         </span>
-        <div className="border border-blue-state bg-blue-state text-blue-state text-head-100 lg:text-head-200 lg:font-recoleta flex justify-center items-center w-[145.7px] min-w-[64px] h-[64px] longArrowleft-bg">
+        <div className="border border-blue-state bg-blue-state rounded-[5px] text-blue-state text-head-100 lg:text-[33px] flex justify-center items-center w-[145.7px] min-w-[64px] h-[64px] longArrowleft-bg">
           <svg
             width="105"
             height="28"
@@ -589,7 +590,7 @@ export const OurValuesGrid = () => {
         </div>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
-        <div className="bg-black-state border border-white-state text-head-100 lg:text-head-200 lg:font-recoleta flex justify-center items-center w-[145.7px] min-w-[64px] h-[64px] longArrowRight-bg">
+        <div className="bg-black-state border rounded-[5px] border-white-state text-head-100 lg:text-[33px] flex justify-center items-center w-[145.7px] min-w-[64px] h-[64px] longArrowRight-bg">
           <svg
             width="105"
             height="28"
@@ -629,15 +630,15 @@ export const OurValuesGrid = () => {
             </defs>
           </svg>
         </div>
-        <span className="text-head-100 lg:text-head-200 lg:font-recoleta bg-black-state text-red-state border border-red-state h-[64px] flex-1 flex items-center justify-center nuture-bg">
+        <span className="text-head-100 lg:text-[33px] rounded-[5px] bg-black-state text-red-state border border-red-state h-[64px] flex-1 flex items-center justify-center nuture-bg">
           NURTURE
         </span>
       </div>
       <div className="flex gap-[10px] mt-[10px]">
-        <span className="text-head-100 lg:text-head-200 lg:font-recoleta text-black bg-yellow-state h-[64px] flex-1 flex items-center justify-center differentiate-bg">
+        <span className="text-head-100 lg:text-[33px] rounded-[5px] text-black bg-yellow-state h-[64px] flex-1 flex items-center justify-center differentiate-bg">
           DIFFERENTIATE
         </span>
-        <div className="border border-green-state flex justify-center items-center w-[64px] min-w-[64px] h-[64px] arrowleft-bg">
+        <div className="border border-green-state flex rounded-[5px] justify-center items-center w-[64px] min-w-[64px] h-[64px] arrowleft-bg">
           {' '}
           <svg
             width="28"

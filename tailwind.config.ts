@@ -42,8 +42,7 @@ const config: Config = {
         tall: { raw: '(min-height: 1000px)' },
       },
       fontFamily: {
-        paradiseGarden: ['Paradise Garden', 'sans-serif'],
-        recoleta: ['var(--font-recoleta)'],
+        resolve: 'var(--font-resolve)',
       },
     },
   },

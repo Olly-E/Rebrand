@@ -132,10 +132,7 @@ const Page = () => {
               >
                 WE BELIEVE THAT EVERY BRAND IS MORE THAN JUST A LOGO OR A
                 WEBSITE. OUR TEAM OF EXPERIENCED DESIGNERS AND DEVELOPERS CREATE
-                VISUAL SOLUTIONS THAT CONNECT WITH YOUR AUDIENCE AND INSPIRE
-                ACTION. FROM BRANDING TO WEBSITES, WE&apos;LL HELP YOU
-                COMMUNICATE YOUR MESSAGE IN A WAY THAT RESONATES WITH YOUR
-                CUSTOMERS.
+                VISUAL SOLUTIONS THAT CONNECT WITH YOUR AUDIENCE.
               </h5>
             </div>
             <div className="w-full sm:w-auto ">
@@ -143,17 +140,14 @@ const Page = () => {
                 <img
                   src="/assets/home/white semicircle.svg"
                   alt="oval"
-                  className="absolute -top-[70px] right-[40px] white-semicircle"
+                  className="absolute top-[0px] right-[0px] white-semicircle"
                 />
-                <h2 className="text-head-100 sm:text-head-300 text-red-state leading-[70px] explore-text">
-                  EXPLORE -
+                <h2 className="text-head-100 sm:text-[48px] text-red-state leading-[70px] explore-text">
+                  THE BRAND -
                 </h2>
-                <p className="text-sm w-[108px] sm:mr-10 font-[300]">
-                  THE BRAND FOR YOUR BRAND ❤️
-                </p>
               </div>
-              <h2 className="text-head-100 sm:text-head-300 text-white-state leading-[60px]">
-                & GET INSPIRED.
+              <h2 className="text-head-100 sm:text-[48px] text-white-state leading-[40px]">
+                FOR YOUR BRAND
               </h2>
             </div>
           </div>

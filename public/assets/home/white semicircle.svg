@@ -4,7 +4,7 @@
 </g>
 <defs>
 <clipPath id="clip0_209_1426">
-<rect width="60" height="120" fill="white" transform="translate(120) rotate(90)"/>
+<rect x="120" width="60" height="120" rx="3" transform="rotate(90 120 0)" fill="white"/>
 </clipPath>
 </defs>
 </svg>

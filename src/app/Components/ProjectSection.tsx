@@ -18,7 +18,7 @@ export const ProjectSection = () => {
       const sections = gsap.utils.toArray('.horizontal-scroll-container')
 
       tl.to(sections, {
-        xPercent: -57 * (sections.length - 1),
+        xPercent: -57 * (sections.length + 3),
         ease: 'none',
         scrollTrigger: {
           trigger: triggerRef.current,
@@ -37,43 +37,63 @@ export const ProjectSection = () => {
   const PROJECT_CONTENT_DATA = [
     {
       name: 'CARTIZN',
-      category: 'BRANDING/WEB DESIGN/DEVELOPMENT',
+      tags: ['brand logo', 'brand identity', 'portfolio'],
       img: '/assets/home/project1.png',
     },
     {
-      name: 'DETAIL DIVE',
-      category: 'BRANDING/WEB DESIGN',
+      name: 'JAM BAR',
+      tags: ['brand logo ', 'brand identity'],
       img: '/assets/home/project2.png',
     },
     {
-      name: 'FUTURE FORGE LABS',
-      category: 'BRAND LOGO CONCEPT',
+      name: 'IT - THE BRAND',
+      tags: ['brand logo ', 'brand identity'],
       img: '/assets/home/project3.png',
     },
     {
-      name: 'THELLY’S DELIGHT',
-      category: 'BRANDING',
+      name: 'POPIN',
+      tags: ['branding', 'web and project design'],
       img: '/assets/home/project4.png',
     },
     {
-      name: 'CARTIZN',
-      category: 'BRANDING/WEB DESIGN/DEVELOPMENT',
-      img: '/assets/home/project1.png',
+      name: 'YADSALE',
+      tags: ['brand logo'],
+      img: '/assets/home/project5.png',
     },
     {
-      name: 'DETAIL DIVE',
-      category: 'BRANDING/WEB DESIGN',
-      img: '/assets/home/project2.png',
+      name: 'IFÉ KULTURE',
+      tags: ['brand logo', 'brand identity'],
+      img: '/assets/home/project6.png',
+    },
+    {
+      name: 'THELLY’S DELIGHT',
+      tags: ['WEBSITE RE - DESIGN X DEVELOPMENT'],
+      img: '/assets/home/project7.png',
+    },
+    {
+      name: 'BUK - MARIS',
+      tags: ['RE - BRANDING', 'Package design'],
+      img: '/assets/home/project8.png',
+    },
+    {
+      name: 'GEMS - CONTINENTAL',
+      tags: ['brand logo'],
+      img: '/assets/home/project9.png',
+    },
+    {
+      name: 'THELLY’S DELIGHT',
+      tags: ['brand logo', 'brand identity'],
+      img: '/assets/home/project10.png',
     },
     {
       name: 'FUTURE FORGE LABS',
-      category: 'BRAND LOGO CONCEPT',
-      img: '/assets/home/project3.png',
+      tags: ['brand logo'],
+      img: '/assets/home/project11.png',
     },
     {
-      name: 'THELLY’S DELIGHT',
-      category: 'BRANDING',
-      img: '/assets/home/project4.png',
+      name: 'HUNKUTECH',
+      tags: ['brand logo'],
+      img: '/assets/home/project12.png',
     },
   ]
 
@@ -113,11 +133,20 @@ export const ProjectSection = () => {
                   key={index}
                 >
                   <img src={data.img} alt="project-img" />
-                  <div className="flex justify-between">
-                    <p className="text-base w-[160px]">{data.name}</p>
-                    <p className="text-base w-[160px] text-right">
-                      {data.category}
-                    </p>
+                  <div className="">
+                    <p className="text-base w-[160px] mt-1">{data.name}</p>
+                    <div className="w-[160px] text-right flex gap-2 mt-3 text-sm">
+                      {data.tags.map((tag, index) => {
+                        return (
+                          <span
+                            className="px-2 py-1 rounded-[5px] whitespace-nowrap w-fit uppercase bg-[#FBF5ED1A]"
+                            key={index}
+                          >
+                            {tag}
+                          </span>
+                        )
+                      })}
+                    </div>
                   </div>
                 </div>
               )

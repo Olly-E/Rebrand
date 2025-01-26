@@ -29,29 +29,34 @@ export const LogoBoxes = () => {
         translateX: '-190px',
         translateY: '-28px',
         rotate: '-12.05deg',
+        borderRadius: '5px',
       })
 
       gsap.set(bentDivRef2.current, {
         translateX: '140px',
         translateY: '-19px',
         rotate: '12.34deg',
+        borderRadius: '5px',
       })
 
       gsap.set(bentDivRef3.current, {
         translateX: '-50px',
         rotate: '12.74deg',
+        borderRadius: '5px',
       })
 
       gsap.set(bentDivRef4.current, {
         translateX: '-50px',
         rotate: '-8.54deg',
         translateY: '68px',
+        borderRadius: '5px',
       })
 
       gsap.set(bentDivRef5.current, {
         translateX: '10px',
         rotate: '13.28deg',
         translateY: '90px',
+        borderRadius: '5px',
       })
 
       tl.to(
@@ -65,6 +70,7 @@ export const LogoBoxes = () => {
         {
           x: 0,
           y: 0,
+          borderRadius: '0px',
           duration: 2,
           rotate: 0,
           ease: 'elastic.out(0.2, 0.5)',
