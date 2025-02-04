@@ -12,12 +12,12 @@ import {
   Templates,
 } from '../Components'
 import Footer from '../features/layouts/Footer'
+import { CustomEase } from 'gsap/CustomEase'
 import { split } from '../animations/text'
 import { useGSAP } from '@gsap/react'
-import { gsap } from 'gsap'
-import { CustomEase } from 'gsap/CustomEase'
-import useSound from 'use-sound'
 import { Draggable } from 'gsap/all'
+import useSound from 'use-sound'
+import { gsap } from 'gsap'
 
 gsap.registerPlugin(CustomEase)
 gsap.registerPlugin(Draggable)

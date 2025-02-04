@@ -1,8 +1,9 @@
-import React, { useRef } from 'react'
-import { OurValuesGrid } from './OurValuesGrid'
-import { gsap } from 'gsap'
-import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+import React, { useRef } from 'react'
+import { gsap } from 'gsap'
+import { OurValuesAnimation } from './OurValuesAnimation'
+import { EyeMouseEffectAnimation } from './EyeMouseAnimation'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -75,22 +76,25 @@ export const OurValues = () => {
 
   return (
     <section className="relative container" ref={containerRef}>
-      <h5 className="absolute top-8 left-10">ABOUT</h5>
-      <h3 className="text-head-200 sm:text-head-300 text-center header sm:mt-auto mt-[50px]">OUR VALUES</h3>
+      <h5 className="text-center mt-6">OUR VALUES</h5>
+      <h3 className="text-head-200 sm:text-head-300 text-center header sm:mt-auto mt-[50px]">
+        ABOUT US
+      </h3>
       <div className="mt-[140px] sm:mx-[10%] gap-10 flex items-center justify-between lg:flex-row flex-col">
         <div className="values-grid">
-          <OurValuesGrid />
+          {/* <OurValuesGrid /> */}
+          <EyeMouseEffectAnimation />
+          <OurValuesAnimation />
         </div>
-        <div className="flex gap-[51px] text-white-state font-[300]">
-          <p
-            className="sm:w-[500px] text-justify sm:text-[20px] uppercase leading-[189.675%] xl:w-[435px]  values-text"
-            data-animation="paragraph"
-          >
-            Welcome to Rebrand — TheBrand ™ - Where brands find their rhythm,
-            creativity takes flight, and ideas know how to HAVE A GOOD TIME.
-            We&apos;re the AGENCY that fearlessly challenges THE norm and
-            champions the beauty of simplicity. LEADING brands choose us because
-            we MAINTAIN the brand language AND constantly PUSH THE boundaries.
+        <div className="">
+          <p className="sm:w-[500px] text-justify sm:text-[20px] uppercase leading-[189.675%] xl:w-[435px] values-text text-white/50">
+            <span className="font-medium" style={{ color: 'white' }}>
+              Rebrand — TheBrand ™{' '}
+            </span>
+            is a design agency that helps companies and brands bridge the gap
+            between wow and everyday life. <br /> <br /> we take a holistic
+            approach to branding, ensuring that every aspect of your brand
+            reflects it’s identity and resonates with your target audience
           </p>
         </div>
       </div>
