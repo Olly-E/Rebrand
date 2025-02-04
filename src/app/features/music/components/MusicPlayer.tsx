@@ -89,7 +89,11 @@ export const MusicPlayer = () => {
             </div>
           </div>
         </div>
-        <div className="h-[36px] w-full border-t-[#FAFAFA]/10 border-t"></div>
+        <div className="h-[36px] w-full border-t-[#FAFAFA]/10 border-t text-[13px] flex items-center justify-between px-4">
+          <p className="">R—TB 🎷</p>
+          <p>Afrò Invasion 🦍</p>
+          <p>Love, Mario 🥀</p>
+        </div>
       </div>
 
       <button
