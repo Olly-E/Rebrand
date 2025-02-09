@@ -1,10 +1,9 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import {
   AnimatedLogo,
   Button,
-  Navbar,
   ProjectSection,
   OurValues,
   LogoBoxes,
@@ -16,7 +15,6 @@ import { CustomEase } from 'gsap/CustomEase'
 import { split } from '../animations/text'
 import { useGSAP } from '@gsap/react'
 import { Draggable } from 'gsap/all'
-import useSound from 'use-sound'
 import { gsap } from 'gsap'
 
 gsap.registerPlugin(CustomEase)
@@ -26,17 +24,6 @@ const Page = () => {
   const containerRef = useRef(null)
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isPlaying, setIsPlaying] = useState(false)
-
-  const [play, { stop }] = useSound('/samba.mp3', { loop: true })
-
-  useEffect(() => {
-    if (isPlaying) {
-      play()
-    } else {
-      stop()
-    }
-  }, [isPlaying, play, stop])
 
   useGSAP(
     () => {
@@ -88,16 +75,8 @@ const Page = () => {
         <div className="container">
           <div className="flex flex-col">
             <AnimatedLogo />
-            <div className="flex items-start justify-between mt-10">
-              <h5 className="font-[300] text-sm sm:text-[16px] text-gray-50 w-[296px] leading-[28px]">
-                LOGOS, BRANDING, UI/UX, CREATIVE WEB DESIGN, TEMPLATES
-              </h5>
-              <div className="flex gap-20">
-                <Navbar />
-              </div>
-            </div>
           </div>
-          <div className="flex-col mt-[5%]">
+          <div className="flex-col mt-40">
             <div className="h-fit flex justify-center">
               <img
                 src={'/assets/home/green-circle.svg'}

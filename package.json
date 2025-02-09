@@ -26,6 +26,8 @@
     "prettier": "^3.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-focus-lock": "^2.13.6",
+    "react-remove-scroll": "^2.6.3",
     "split-type": "^0.3.4",
     "splitting": "^1.0.6",
     "use-sound": "^4.0.1"
@@ -35,6 +37,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-howler": "^5.2.3",
     "@types/splitting": "^1.0.5",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",

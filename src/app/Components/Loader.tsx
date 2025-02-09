@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { AssetsLoadedAtom } from '../store'
 import { useSetAtom } from 'jotai'
 
-const Loader = () => {
+export const Loader = () => {
   const [loadingProgress, setLoadingProgress] = useState(0)
   const setIsAssetsLoaded = useSetAtom(AssetsLoadedAtom)
 
@@ -50,7 +50,7 @@ const Loader = () => {
           checkAssetsLoaded()
         }
         img.onerror = (error) => {
-          console.error(`Error loading asset: ${path}`, error)
+            console.error(`Error loading asset: ${path}`, error)
           checkAssetsLoaded()
         }
         img.src = path
@@ -61,12 +61,10 @@ const Loader = () => {
   }, [setIsAssetsLoaded])
 
   return (
-    <div className="h-screen">
+    <div className="h-screen relative z-[999999]">
       <p className="absolute bottom-0 text-[100px] pl-2">
         {Math.min(loadingProgress, 100).toFixed(0).padStart(3, '0')}%
       </p>
     </div>
   )
 }
-
-export default Loader

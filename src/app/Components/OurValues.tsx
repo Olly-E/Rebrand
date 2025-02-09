@@ -75,7 +75,7 @@ export const OurValues = () => {
   })
 
   return (
-    <section className="relative container" ref={containerRef}>
+    <section className="relative container" ref={containerRef} id="about">
       <h5 className="text-center mt-6">OUR VALUES</h5>
       <h3 className="text-head-200 sm:text-head-300 text-center header sm:mt-auto mt-[50px]">
         ABOUT US

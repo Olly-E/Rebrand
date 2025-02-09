@@ -73,7 +73,7 @@ export const ServicesWeOffer = () => {
   )
 
   return (
-    <section className="container" ref={containerRef}>
+    <section className="container" id="services" ref={containerRef}>
       <div className="mt-10 mb-24">
         <div>
           <p data-animation="paragraph">WHAT WE DO</p>

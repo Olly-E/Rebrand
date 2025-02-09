@@ -5,7 +5,7 @@ import localFont from 'next/font/local'
 
 const resolve = localFont({
   variable: '--font-resolve',
-  display: "swap",
+  display: 'swap',
   src: [
     {
       path: '../../public/font/resolve-sans-bulk.otf',
@@ -81,6 +81,7 @@ export default function RootLayout({
     <html lang="en" className={`${resolve.variable} antialiased`}>
       <body className={`${karla.variable} `}>
         {children}
+        <div id="modal-root"></div>
       </body>
     </html>
   )

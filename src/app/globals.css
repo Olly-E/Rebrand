@@ -280,7 +280,7 @@ a {
   background-color: #fff;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 999999;
   transform-origin: 50% 50%;
   transform: translate(-50%, -50%);
   mix-blend-mode: difference;

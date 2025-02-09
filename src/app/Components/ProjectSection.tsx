@@ -101,6 +101,7 @@ export const ProjectSection = () => {
     <section
       className="relative pt-[200px] w-full overflow-hidden"
       ref={containerRef}
+      id='project'
     >
       <div>
         <p className="mt-14 text-center text-[16px] font-bold">OUR CLIENTS</p>
