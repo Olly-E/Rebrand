@@ -10,6 +10,7 @@ import {
   ServicesWeOffer,
   Templates,
 } from '../Components'
+import GravityShapes from '../features/physics/GravityShapes'
 import Footer from '../features/layouts/Footer'
 import { CustomEase } from 'gsap/CustomEase'
 import { split } from '../animations/text'
@@ -22,6 +23,27 @@ gsap.registerPlugin(Draggable)
 
 const Page = () => {
   const containerRef = useRef(null)
+
+  const [isVisible, setIsVisible] = React.useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect() // Stop observing once visible
+        }
+      },
+      { threshold: 0.5 } // 50% of the section must be in view
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
@@ -70,7 +92,7 @@ const Page = () => {
   }, [])
 
   return (
-    <div className="text-gray-50 scrollbar-hide" ref={containerRef}>
+    <div className="text-gray-50 scrollbar-hide relative" ref={containerRef}>
       <section className="relative h-screen mb-24 drag-container">
         <div className="container">
           <div className="flex flex-col">
@@ -137,16 +159,15 @@ const Page = () => {
       <ServicesWeOffer />
       <ProjectSection />
       <Templates />
-      <section className="container">
+      <section className="container h-[60vh] relative" ref={sectionRef}>
         <p className="text-center font-[300] opacity-50 mb-4">GET IN TOUCH</p>
-        <h3 className="w-[611px] text-head-300 text-center mx-auto leading-[70px]">
+        <h3 className="w-[879px] text-[64px] text-center mx-auto leading-[70px]">
           LET&apos;S DISCUSS YOUR GREAT IDEA
         </h3>
         <Button className="mx-auto mt-8">LET&apos;S CONNECT</Button>
-        <div className="mt-44 my-20">
-          <img src="/assets/home/brand-logo.png" alt="brand-logo" />
-        </div>
+        {isVisible && <GravityShapes sectionRef={sectionRef} />}
       </section>
+
       <Footer />
     </div>
   )

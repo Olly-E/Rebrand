@@ -54,7 +54,7 @@ export const Templates = () => {
     {
       name: 'DETAIL DIVE',
       category: 'BRANDING/WEB DESIGN',
-      img: '/assets/home/project3.png',
+      img: '/assets/home/project2.png',
     },
     {
       name: 'FUTURE FORGE LABS',
@@ -86,7 +86,7 @@ export const Templates = () => {
             return (
               <div
                 key={index}
-                className={`w-[617px] picture-container -top-[110px] absolute left-[50%] -translate-x-[50%] z-[${
+                className={`w-[617px] picture-container -top-[110px] absolute left-[50%] -translate-x-[50%] !z-[${
                   index * 1
                 }]`}
               >
