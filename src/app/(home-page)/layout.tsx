@@ -113,7 +113,7 @@ const Layout: React.FC<WebsiteLayoutProps> = ({ children }) => {
           timeConstant: 300,
         }}
         className={clsx(
-          'top-[150px] left-10 flex items-center gap-4 z-[0]',
+          'top-[150px] left-10 flex items-center gap-4 z-[1]',
           isAssetsLoaded.isAssetsLoaded ? 'fixed' :'hidden' 
         )}
       >
